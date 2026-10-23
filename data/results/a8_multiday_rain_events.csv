@@ -1,0 +1,31 @@
+﻿national_rank,location_id,location_name,site_name,region,is_core,start_date,end_date,rain_3d_mm
+1,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2020-10-17,2020-10-19,865.4
+2,QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2020-10-18,2020-10-20,468.5
+3,QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2019-09-02,2019-09-04,465.8
+4,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2019-09-02,2019-09-04,449.4
+5,QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2020-10-07,2020-10-09,426.3
+6,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2016-10-13,2016-10-15,420.8
+7,QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2024-10-27,2024-10-29,416.6
+8,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2021-10-16,2021-10-18,408.3
+9,QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2021-10-16,2021-10-18,377.3
+10,HUE,Huế,Huế,Bắc Trung Bộ,True,2016-12-13,2016-12-15,369.5
+11,HUE,Huế,Huế,Bắc Trung Bộ,True,2025-10-26,2025-10-28,360.8
+12,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2020-10-07,2020-10-09,339.6
+13,QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2021-09-10,2021-09-12,339.0
+14,NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2020-10-18,2020-10-20,336.4
+15,HUE,Huế,Huế,Bắc Trung Bộ,True,2017-11-20,2017-11-22,331.8
+16,DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2022-03-31,2022-04-02,331.7
+17,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2016-10-30,2016-11-01,327.7
+18,QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2016-11-30,2016-12-02,326.0
+19,DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2021-09-11,2021-09-13,325.9
+20,QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2017-09-14,2017-09-16,323.4
+21,DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2017-11-04,2017-11-06,316.7
+22,DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2020-10-09,2020-10-11,314.8
+23,HUE,Huế,Huế,Bắc Trung Bộ,True,2017-11-05,2017-11-07,314.4
+24,HUE,Huế,Huế,Bắc Trung Bộ,True,2020-10-07,2020-10-09,310.1
+25,HUE,Huế,Huế,Bắc Trung Bộ,True,2022-03-31,2022-04-02,308.8
+26,QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2020-11-09,2020-11-11,308.2
+27,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2025-08-24,2025-08-26,307.4
+28,HUE,Huế,Huế,Bắc Trung Bộ,True,2025-06-11,2025-06-13,307.3
+29,HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2018-07-16,2018-07-18,299.7
+30,HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2024-09-06,2024-09-08,298.3

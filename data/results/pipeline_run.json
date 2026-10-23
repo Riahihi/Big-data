@@ -1,0 +1,53 @@
+{
+  "steps": {
+    "ingest": {
+      "title": "Thu thập & lưu dữ liệu gốc",
+      "status": "ok",
+      "elapsed_s": 2970.0,
+      "finished_at": "2026-10-23T09:16:46",
+      "note": "Khoảng thời gian từ request đầu tới request cuối (~50 phút), gồm thời gian chờ khi API báo vượt giới hạn theo giờ (HTTP 429) và một lần chạy tiếp sau lỗi phản hồi rỗng"
+    },
+    "daily": {
+      "title": "Tải daily API để đối chiếu",
+      "status": "ok",
+      "elapsed_s": 31.8,
+      "finished_at": "2026-10-23T09:17:18"
+    },
+    "clean": {
+      "title": "Làm sạch & ghi Parquet",
+      "status": "ok",
+      "elapsed_s": 88.4,
+      "finished_at": "2026-10-23T09:25:00"
+    },
+    "analysis": {
+      "title": "Ba câu hỏi phân tích",
+      "status": "ok",
+      "elapsed_s": 29.2,
+      "finished_at": "2026-10-23T09:25:29"
+    },
+    "advanced": {
+      "title": "Phân tích mở rộng",
+      "status": "ok",
+      "elapsed_s": 64.8,
+      "finished_at": "2026-10-23T09:26:34"
+    },
+    "verify": {
+      "title": "Kiểm chứng độc lập",
+      "status": "ok",
+      "elapsed_s": 4.5,
+      "finished_at": "2026-10-23T09:44:40"
+    },
+    "benchmark": {
+      "title": "Đo hiệu năng (Mức B)",
+      "status": "ok",
+      "elapsed_s": 87.6,
+      "finished_at": "2026-10-23T09:30:32"
+    },
+    "figures": {
+      "title": "Vẽ biểu đồ",
+      "status": "ok",
+      "elapsed_s": 13.3,
+      "finished_at": "2026-10-23T09:30:45"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "V1_q1_monthly_temp": {
+    "rows_independent": 600,
+    "rows_spark": 600,
+    "rows_only_one_side": 0,
+    "avg_temp_c": {
+      "max_abs_diff": 0.005,
+      "n_over_tolerance": 0
+    },
+    "passed": true
+  },
+  "V1_q2_monthly_precip": {
+    "rows_independent": 600,
+    "rows_spark": 600,
+    "rows_only_one_side": 0,
+    "total_precip_mm": {
+      "max_abs_diff": 0.0,
+      "n_over_tolerance": 0
+    },
+    "passed": true
+  },
+  "V1_q3_top5": {
+    "rows_independent": 51,
+    "rows_spark": 51,
+    "rows_only_one_side": 0,
+    "precip_mm": {
+      "max_abs_diff": 0.0,
+      "n_over_tolerance": 0
+    },
+    "rank": {
+      "max_abs_diff": 0.0,
+      "n_over_tolerance": 0
+    },
+    "passed": true
+  },
+  "V2_open_meteo_daily": {
+    "n_days_compared": 18260,
+    "n_locations": 10,
+    "precipitation_sum_vs_precip_mm": {
+      "mae": 0.0,
+      "max_abs_diff": 0.0,
+      "pct_within_0.1": 100.0,
+      "pearson_r": 1.0
+    },
+    "temperature_2m_mean_vs_t_mean": {
+      "mae": 0.0271,
+      "max_abs_diff": 0.08,
+      "pct_within_0.1": 100.0,
+      "pearson_r": 0.999973
+    },
+    "temperature_2m_max_vs_t_max": {
+      "mae": 0.0631,
+      "max_abs_diff": 0.6,
+      "pct_within_0.1": 88.943,
+      "pearson_r": 0.999846
+    },
+    "temperature_2m_min_vs_t_min": {
+      "mae": 0.0748,
+      "max_abs_diff": 2.6,
+      "pct_within_0.1": 86.402,
+      "pearson_r": 0.999337
+    },
+    "tmax_api_ge_hourly_pct": 100.0,
+    "tmin_api_le_hourly_pct": 100.0,
+    "passed": true
+  },
+  "V3_manual_sample": {
+    "location_id": "DNG",
+    "date": "2021-09-12",
+    "hourly_precip_mm": [
+      5.8,
+      3.1,
+      4.5,
+      5.6,
+      5.6,
+      5.4,
+      6.6,
+      7.8,
+      8.1,
+      6.8,
+      6.9,
+      8.3,
+      10.4,
+      8.4,
+      9.4,
+      10.3,
+      10.6,
+      10.5,
+      10.8,
+      11.2,
+      11.8,
+      11.2,
+      11.1,
+      9.9
+    ],
+    "hour_labels": [
+      "12/09 01:00",
+      "12/09 02:00",
+      "12/09 03:00",
+      "12/09 04:00",
+      "12/09 05:00",
+      "12/09 06:00",
+      "12/09 07:00",
+      "12/09 08:00",
+      "12/09 09:00",
+      "12/09 10:00",
+      "12/09 11:00",
+      "12/09 12:00",
+      "12/09 13:00",
+      "12/09 14:00",
+      "12/09 15:00",
+      "12/09 16:00",
+      "12/09 17:00",
+      "12/09 18:00",
+      "12/09 19:00",
+      "12/09 20:00",
+      "12/09 21:00",
+      "12/09 22:00",
+      "12/09 23:00",
+      "13/09 00:00"
+    ],
+    "manual_sum_mm": 200.1,
+    "spark_value_mm": 200.1,
+    "passed": true
+  },
+  "V4_parquet_roundtrip": {
+    "clean_rows": 2980848,
+    "expected_rows": 2980848,
+    "missing_rows": 0,
+    "duplicates_removed": 0,
+    "passed": true
+  },
+  "all_passed": true
+}

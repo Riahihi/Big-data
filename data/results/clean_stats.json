@@ -1,0 +1,15 @@
+{
+  "raw_rows": 2980848,
+  "duplicates_removed": 0,
+  "rows_outside_grid": 0,
+  "clean_rows": 2980848,
+  "expected_rows": 2980848,
+  "missing_rows": 0,
+  "rows_imputed": 0,
+  "out_of_range_total": 0,
+  "null_temperature_after_clean": 0,
+  "null_precipitation_after_clean": 0,
+  "n_locations": 34,
+  "parquet_roundtrip_ok": true,
+  "elapsed_s": 87.6
+}

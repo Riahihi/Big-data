@@ -1,0 +1,165 @@
+﻿location_id,location_name,site_name,region,is_core,rain_class,n_days,n_years,days_per_year
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,Không mưa đáng kể (<1 mm),1351,10,135.1
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,Mưa nhỏ (1–15 mm),1970,10,197.0
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,Mưa to (51–100 mm),8,10,0.8
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,Mưa vừa (16–50 mm),324,10,32.4
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,Không mưa đáng kể (<1 mm),1913,10,191.3
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,Mưa nhỏ (1–15 mm),1353,10,135.3
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,Mưa rất to (>100 mm),4,10,0.4
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,Mưa to (51–100 mm),26,10,2.6
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,Mưa vừa (16–50 mm),357,10,35.7
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,Không mưa đáng kể (<1 mm),1529,10,152.9
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,Mưa nhỏ (1–15 mm),1817,10,181.7
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,Mưa rất to (>100 mm),4,10,0.4
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,Mưa to (51–100 mm),22,10,2.2
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,Mưa vừa (16–50 mm),281,10,28.1
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,Không mưa đáng kể (<1 mm),1211,10,121.1
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,Mưa nhỏ (1–15 mm),1982,10,198.2
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,Mưa to (51–100 mm),5,10,0.5
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,Mưa vừa (16–50 mm),455,10,45.5
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,Không mưa đáng kể (<1 mm),1432,10,143.2
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,Mưa nhỏ (1–15 mm),1945,10,194.5
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,Mưa to (51–100 mm),3,10,0.3
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,Mưa vừa (16–50 mm),273,10,27.3
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,Không mưa đáng kể (<1 mm),1884,10,188.4
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,Mưa nhỏ (1–15 mm),1476,10,147.6
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,Mưa rất to (>100 mm),4,10,0.4
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,Mưa to (51–100 mm),21,10,2.1
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,Mưa vừa (16–50 mm),268,10,26.8
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,Không mưa đáng kể (<1 mm),2012,10,201.2
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,Mưa nhỏ (1–15 mm),1483,10,148.3
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,Mưa rất to (>100 mm),2,10,0.2
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,Mưa to (51–100 mm),8,10,0.8
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,Mưa vừa (16–50 mm),148,10,14.8
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,Không mưa đáng kể (<1 mm),1475,10,147.5
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,Mưa nhỏ (1–15 mm),1733,10,173.3
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,Mưa rất to (>100 mm),18,10,1.8
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,Mưa to (51–100 mm),84,10,8.4
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,Mưa vừa (16–50 mm),343,10,34.3
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,Không mưa đáng kể (<1 mm),1534,10,153.4
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,Mưa nhỏ (1–15 mm),1801,10,180.1
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,Mưa rất to (>100 mm),1,10,0.1
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,Mưa to (51–100 mm),3,10,0.3
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,Mưa vừa (16–50 mm),314,10,31.4
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,Không mưa đáng kể (<1 mm),1472,10,147.2
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,Mưa nhỏ (1–15 mm),1847,10,184.7
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,Mưa to (51–100 mm),7,10,0.7
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,Mưa vừa (16–50 mm),327,10,32.7
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,Không mưa đáng kể (<1 mm),1517,10,151.7
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,Mưa nhỏ (1–15 mm),1809,10,180.9
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,Mưa rất to (>100 mm),13,10,1.3
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,Mưa to (51–100 mm),41,10,4.1
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,Mưa vừa (16–50 mm),273,10,27.3
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,Không mưa đáng kể (<1 mm),1506,10,150.6
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,Mưa nhỏ (1–15 mm),1855,10,185.5
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,Mưa rất to (>100 mm),1,10,0.1
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,Mưa to (51–100 mm),3,10,0.3
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,Mưa vừa (16–50 mm),288,10,28.8
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,Không mưa đáng kể (<1 mm),2012,10,201.2
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,Mưa nhỏ (1–15 mm),1294,10,129.4
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,Mưa rất to (>100 mm),7,10,0.7
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,Mưa to (51–100 mm),33,10,3.3
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,Mưa vừa (16–50 mm),307,10,30.7
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,Không mưa đáng kể (<1 mm),1886,10,188.6
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,Mưa nhỏ (1–15 mm),1408,10,140.8
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,Mưa rất to (>100 mm),3,10,0.3
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,Mưa to (51–100 mm),29,10,2.9
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,Mưa vừa (16–50 mm),327,10,32.7
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,Không mưa đáng kể (<1 mm),1860,10,186.0
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,Mưa nhỏ (1–15 mm),1403,10,140.3
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,Mưa rất to (>100 mm),44,10,4.4
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,Mưa to (51–100 mm),65,10,6.5
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,Mưa vừa (16–50 mm),281,10,28.1
+HUE,Huế,Huế,Bắc Trung Bộ,True,Không mưa đáng kể (<1 mm),1365,10,136.5
+HUE,Huế,Huế,Bắc Trung Bộ,True,Mưa nhỏ (1–15 mm),1672,10,167.2
+HUE,Huế,Huế,Bắc Trung Bộ,True,Mưa rất to (>100 mm),29,10,2.9
+HUE,Huế,Huế,Bắc Trung Bộ,True,Mưa to (51–100 mm),102,10,10.2
+HUE,Huế,Huế,Bắc Trung Bộ,True,Mưa vừa (16–50 mm),485,10,48.5
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,Không mưa đáng kể (<1 mm),2027,10,202.7
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,Mưa nhỏ (1–15 mm),1277,10,127.7
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,Mưa rất to (>100 mm),6,10,0.6
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,Mưa to (51–100 mm),30,10,3.0
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,Mưa vừa (16–50 mm),313,10,31.3
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,Không mưa đáng kể (<1 mm),1337,10,133.7
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,Mưa nhỏ (1–15 mm),1916,10,191.6
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,Mưa rất to (>100 mm),3,10,0.3
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,Mưa to (51–100 mm),36,10,3.6
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,Mưa vừa (16–50 mm),361,10,36.1
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,Không mưa đáng kể (<1 mm),1792,10,179.2
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,Mưa nhỏ (1–15 mm),1364,10,136.4
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,Mưa rất to (>100 mm),6,10,0.6
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,Mưa to (51–100 mm),49,10,4.9
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,Mưa vừa (16–50 mm),442,10,44.2
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,Không mưa đáng kể (<1 mm),1486,10,148.6
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,Mưa nhỏ (1–15 mm),1802,10,180.2
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,Mưa rất to (>100 mm),2,10,0.2
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,Mưa to (51–100 mm),30,10,3.0
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,Mưa vừa (16–50 mm),333,10,33.3
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,Không mưa đáng kể (<1 mm),1245,10,124.5
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,Mưa nhỏ (1–15 mm),2029,10,202.9
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,Mưa rất to (>100 mm),1,10,0.1
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,Mưa to (51–100 mm),16,10,1.6
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,Mưa vừa (16–50 mm),362,10,36.2
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,Không mưa đáng kể (<1 mm),1729,10,172.9
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,Mưa nhỏ (1–15 mm),1621,10,162.1
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,Mưa rất to (>100 mm),3,10,0.3
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,Mưa to (51–100 mm),18,10,1.8
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,Mưa vừa (16–50 mm),282,10,28.2
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,Không mưa đáng kể (<1 mm),2245,10,224.5
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,Mưa nhỏ (1–15 mm),1137,10,113.7
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,Mưa rất to (>100 mm),20,10,2.0
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,Mưa to (51–100 mm),53,10,5.3
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,Mưa vừa (16–50 mm),198,10,19.8
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,Không mưa đáng kể (<1 mm),2095,10,209.5
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,Mưa nhỏ (1–15 mm),1233,10,123.3
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,Mưa rất to (>100 mm),7,10,0.7
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,Mưa to (51–100 mm),32,10,3.2
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,Mưa vừa (16–50 mm),286,10,28.6
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,Không mưa đáng kể (<1 mm),2003,10,200.3
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,Mưa nhỏ (1–15 mm),1338,10,133.8
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,Mưa rất to (>100 mm),8,10,0.8
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,Mưa to (51–100 mm),37,10,3.7
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,Mưa vừa (16–50 mm),267,10,26.7
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,Không mưa đáng kể (<1 mm),1363,10,136.3
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,Mưa nhỏ (1–15 mm),1890,10,189.0
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,Mưa rất to (>100 mm),18,10,1.8
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,Mưa to (51–100 mm),51,10,5.1
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,Mưa vừa (16–50 mm),331,10,33.1
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,Không mưa đáng kể (<1 mm),1865,10,186.5
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,Mưa nhỏ (1–15 mm),1414,10,141.4
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,Mưa rất to (>100 mm),6,10,0.6
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,Mưa to (51–100 mm),26,10,2.6
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,Mưa vừa (16–50 mm),342,10,34.2
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,Không mưa đáng kể (<1 mm),1655,10,165.5
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,Mưa nhỏ (1–15 mm),1599,10,159.9
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,Mưa rất to (>100 mm),37,10,3.7
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,Mưa to (51–100 mm),57,10,5.7
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,Mưa vừa (16–50 mm),305,10,30.5
+SLA,Sơn La,Sơn La,Tây Bắc,False,Không mưa đáng kể (<1 mm),2140,10,214.0
+SLA,Sơn La,Sơn La,Tây Bắc,False,Mưa nhỏ (1–15 mm),1297,10,129.7
+SLA,Sơn La,Sơn La,Tây Bắc,False,Mưa rất to (>100 mm),5,10,0.5
+SLA,Sơn La,Sơn La,Tây Bắc,False,Mưa to (51–100 mm),19,10,1.9
+SLA,Sơn La,Sơn La,Tây Bắc,False,Mưa vừa (16–50 mm),192,10,19.2
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,Không mưa đáng kể (<1 mm),2232,10,223.2
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,Mưa nhỏ (1–15 mm),1115,10,111.5
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,Mưa rất to (>100 mm),10,10,1.0
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,Mưa to (51–100 mm),31,10,3.1
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,Mưa vừa (16–50 mm),265,10,26.5
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,Không mưa đáng kể (<1 mm),1463,10,146.3
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,Mưa nhỏ (1–15 mm),1883,10,188.3
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,Mưa rất to (>100 mm),1,10,0.1
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,Mưa to (51–100 mm),4,10,0.4
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,Mưa vừa (16–50 mm),302,10,30.2
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,Không mưa đáng kể (<1 mm),1748,10,174.8
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,Mưa nhỏ (1–15 mm),1433,10,143.3
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,Mưa rất to (>100 mm),7,10,0.7
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,Mưa to (51–100 mm),36,10,3.6
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,Mưa vừa (16–50 mm),429,10,42.9
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,Không mưa đáng kể (<1 mm),1910,10,191.0
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,Mưa nhỏ (1–15 mm),1252,10,125.2
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,Mưa to (51–100 mm),39,10,3.9
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,Mưa vừa (16–50 mm),452,10,45.2
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,Không mưa đáng kể (<1 mm),1444,10,144.4
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,Mưa nhỏ (1–15 mm),1896,10,189.6
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,Mưa to (51–100 mm),8,10,0.8
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,Mưa vừa (16–50 mm),305,10,30.5

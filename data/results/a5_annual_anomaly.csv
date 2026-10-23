@@ -1,0 +1,341 @@
+﻿location_id,location_name,site_name,region,is_core,year,annual_mean_temp,anomaly_c
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2016,28.14,0.298
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2017,27.51,-0.332
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2018,27.62,-0.222
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2019,27.8,-0.042
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2020,27.94,0.098
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2021,27.45,-0.392
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2022,27.62,-0.222
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2023,28.04,0.198
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2024,28.52,0.678
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,2025,27.78,-0.062
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2016,24.53,-0.132
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2017,24.41,-0.252
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2018,24.41,-0.252
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2019,25.02,0.358
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2020,24.72,0.058
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2021,24.73,0.068
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2022,24.14,-0.522
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2023,25.05,0.388
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2024,25.16,0.498
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,2025,24.45,-0.212
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2016,23.7,0.092
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2017,23.44,-0.168
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2018,23.38,-0.228
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2019,23.71,0.102
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2020,23.42,-0.188
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2021,23.64,0.032
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2022,23.17,-0.438
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2023,23.98,0.372
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2024,24.03,0.422
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2025,23.61,0.002
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2016,27.99,0.21
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2017,27.5,-0.28
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2018,27.58,-0.2
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2019,27.79,0.01
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2020,27.96,0.18
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2021,27.41,-0.37
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2022,27.53,-0.25
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2023,27.86,0.08
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2024,28.42,0.64
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,2025,27.76,-0.02
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2016,27.93,0.283
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2017,27.43,-0.217
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2018,27.5,-0.147
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2019,27.67,0.023
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2020,27.8,0.153
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2021,27.23,-0.417
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2022,27.38,-0.267
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2023,27.71,0.063
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2024,28.26,0.613
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,2025,27.56,-0.087
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2016,24.39,-0.095
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2017,24.2,-0.285
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2018,23.96,-0.525
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2019,25.17,0.685
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2020,24.58,0.095
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2021,24.15,-0.335
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2022,24.12,-0.365
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2023,24.97,0.485
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2024,25.18,0.695
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2025,24.13,-0.355
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2016,26.25,0.541
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2017,25.78,0.071
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2018,25.92,0.211
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2019,26.34,0.631
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2020,25.96,0.251
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2021,25.22,-0.489
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2022,25.3,-0.409
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2023,25.33,-0.379
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2024,26.0,0.291
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,2025,24.99,-0.719
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2016,26.88,0.023
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2017,26.69,-0.167
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2018,26.66,-0.197
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2019,27.53,0.673
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2020,26.97,0.113
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2021,26.76,-0.097
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2022,26.45,-0.407
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2023,27.07,0.213
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2024,27.3,0.443
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,2025,26.26,-0.597
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2016,28.33,0.249
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2017,28.05,-0.031
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2018,28.15,0.069
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2019,28.33,0.249
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2020,28.09,0.009
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2021,27.64,-0.441
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2022,27.82,-0.261
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2023,27.96,-0.121
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2024,28.58,0.499
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2025,27.86,-0.221
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2016,27.82,0.206
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2017,27.55,-0.064
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2018,27.51,-0.104
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2019,27.64,0.026
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2020,27.73,0.116
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2021,27.23,-0.384
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2022,27.4,-0.214
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2023,27.59,-0.024
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2024,28.18,0.566
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,2025,27.49,-0.124
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2016,27.3,0.109
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2017,27.25,0.059
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2018,27.16,-0.031
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2019,27.67,0.479
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2020,27.23,0.039
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2021,26.97,-0.221
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2022,26.82,-0.371
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2023,27.35,0.159
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2024,27.45,0.259
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,2025,26.71,-0.481
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2016,28.24,0.249
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2017,27.96,-0.031
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2018,27.97,-0.021
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2019,28.13,0.139
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2020,28.06,0.069
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2021,27.58,-0.411
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2022,27.74,-0.251
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2023,27.9,-0.091
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2024,28.54,0.549
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,2025,27.79,-0.201
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2016,24.72,-0.062
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2017,24.51,-0.272
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2018,24.63,-0.152
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2019,25.15,0.368
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2020,24.77,-0.012
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2021,24.84,0.058
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2022,24.31,-0.472
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2023,25.15,0.368
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2024,25.24,0.458
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,2025,24.5,-0.282
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2016,24.4,-0.306
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2017,24.42,-0.286
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2018,24.43,-0.276
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2019,25.25,0.544
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2020,24.91,0.204
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2021,24.72,0.014
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2022,24.23,-0.476
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2023,25.04,0.334
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2024,25.21,0.504
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,2025,24.45,-0.256
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2016,25.78,0.016
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2017,25.4,-0.364
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2018,25.36,-0.404
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2019,26.62,0.856
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2020,26.04,0.276
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2021,25.58,-0.184
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2022,25.31,-0.454
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2023,26.07,0.306
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2024,26.42,0.656
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,2025,25.06,-0.704
+HUE,Huế,Huế,Bắc Trung Bộ,True,2016,26.7,0.004
+HUE,Huế,Huế,Bắc Trung Bộ,True,2017,26.46,-0.236
+HUE,Huế,Huế,Bắc Trung Bộ,True,2018,26.45,-0.246
+HUE,Huế,Huế,Bắc Trung Bộ,True,2019,27.44,0.744
+HUE,Huế,Huế,Bắc Trung Bộ,True,2020,26.81,0.114
+HUE,Huế,Huế,Bắc Trung Bộ,True,2021,26.69,-0.006
+HUE,Huế,Huế,Bắc Trung Bộ,True,2022,26.22,-0.476
+HUE,Huế,Huế,Bắc Trung Bộ,True,2023,26.93,0.234
+HUE,Huế,Huế,Bắc Trung Bộ,True,2024,27.17,0.474
+HUE,Huế,Huế,Bắc Trung Bộ,True,2025,26.09,-0.606
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2016,24.68,-0.116
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2017,24.51,-0.286
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2018,24.57,-0.226
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2019,25.26,0.464
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2020,24.91,0.114
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2021,24.88,0.084
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2022,24.29,-0.506
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2023,25.14,0.344
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2024,25.25,0.454
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,2025,24.47,-0.326
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2016,28.11,0.232
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2017,27.89,0.012
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2018,28.1,0.222
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2019,28.39,0.512
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2020,28.0,0.122
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2021,27.45,-0.428
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2022,27.29,-0.588
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2023,27.87,-0.008
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2024,28.28,0.402
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,2025,27.4,-0.478
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2016,24.81,0.134
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2017,24.45,-0.226
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2018,24.56,-0.116
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2019,24.93,0.254
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2020,24.48,-0.196
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2021,24.69,0.014
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2022,24.28,-0.396
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2023,25.0,0.324
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2024,25.1,0.424
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,2025,24.46,-0.216
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2016,21.29,0.086
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2017,21.03,-0.174
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2018,20.87,-0.334
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2019,21.57,0.366
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2020,20.92,-0.284
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2021,20.95,-0.254
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2022,20.86,-0.344
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2023,21.75,0.546
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2024,21.87,0.666
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,2025,20.93,-0.274
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2016,19.41,0.334
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2017,19.23,0.154
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2018,19.13,0.054
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2019,19.26,0.184
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2020,19.15,0.074
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2021,18.65,-0.426
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2022,18.77,-0.306
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2023,18.97,-0.106
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2024,19.46,0.384
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,2025,18.73,-0.346
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2016,22.64,-0.104
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2017,22.56,-0.184
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2018,22.47,-0.274
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2019,22.99,0.246
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2020,22.7,-0.044
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2021,22.85,0.106
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2022,22.25,-0.494
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2023,23.21,0.466
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2024,23.17,0.426
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,2025,22.6,-0.144
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2016,25.62,-0.056
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2017,25.37,-0.306
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2018,25.39,-0.286
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2019,26.44,0.764
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2020,26.02,0.344
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2021,25.52,-0.156
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2022,25.24,-0.436
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2023,26.0,0.324
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2024,26.09,0.414
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,2025,25.07,-0.606
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2016,24.79,-0.162
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2017,24.67,-0.282
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2018,24.65,-0.302
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2019,25.53,0.578
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2020,25.14,0.188
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2021,25.01,0.058
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2022,24.5,-0.452
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2023,25.27,0.318
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2024,25.38,0.428
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,2025,24.58,-0.372
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2016,24.94,-0.001
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2017,24.68,-0.261
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2018,24.83,-0.111
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2019,25.3,0.359
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2020,24.9,-0.041
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2021,25.0,0.059
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2022,24.48,-0.461
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2023,25.27,0.329
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2024,25.34,0.399
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,2025,24.67,-0.271
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2016,27.73,0.226
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2017,27.47,-0.034
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2018,27.51,0.006
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2019,28.28,0.776
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2020,27.57,0.066
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2021,27.31,-0.194
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2022,26.99,-0.514
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2023,27.54,0.036
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2024,27.82,0.316
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,2025,26.82,-0.684
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2016,24.37,-0.342
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2017,24.41,-0.302
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2018,24.44,-0.272
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2019,25.26,0.548
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2020,24.94,0.228
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2021,24.77,0.058
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2022,24.26,-0.452
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2023,25.04,0.328
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2024,25.18,0.468
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,2025,24.45,-0.262
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2016,26.08,0.042
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2017,25.71,-0.328
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2018,25.58,-0.458
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2019,26.78,0.742
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2020,26.44,0.402
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2021,25.74,-0.298
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2022,25.64,-0.398
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2023,26.35,0.312
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2024,26.63,0.592
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,2025,25.43,-0.608
+SLA,Sơn La,Sơn La,Tây Bắc,False,2016,22.99,0.039
+SLA,Sơn La,Sơn La,Tây Bắc,False,2017,22.7,-0.251
+SLA,Sơn La,Sơn La,Tây Bắc,False,2018,22.77,-0.181
+SLA,Sơn La,Sơn La,Tây Bắc,False,2019,23.73,0.779
+SLA,Sơn La,Sơn La,Tây Bắc,False,2020,22.77,-0.181
+SLA,Sơn La,Sơn La,Tây Bắc,False,2021,22.71,-0.241
+SLA,Sơn La,Sơn La,Tây Bắc,False,2022,22.38,-0.571
+SLA,Sơn La,Sơn La,Tây Bắc,False,2023,23.4,0.449
+SLA,Sơn La,Sơn La,Tây Bắc,False,2024,23.5,0.549
+SLA,Sơn La,Sơn La,Tây Bắc,False,2025,22.56,-0.391
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2016,25.19,-0.158
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2017,25.05,-0.298
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2018,25.03,-0.318
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2019,25.96,0.612
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2020,25.63,0.282
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2021,25.4,0.052
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2022,24.92,-0.428
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2023,25.67,0.322
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2024,25.75,0.402
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2025,24.88,-0.468
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2016,28.11,0.239
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2017,27.82,-0.051
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2018,27.8,-0.071
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2019,27.93,0.059
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2020,27.97,0.099
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2021,27.5,-0.371
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2022,27.64,-0.231
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2023,27.81,-0.061
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2024,28.43,0.559
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,2025,27.7,-0.171
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2016,24.66,0.004
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2017,24.42,-0.236
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2018,24.46,-0.196
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2019,24.94,0.284
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2020,24.52,-0.136
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2021,24.69,0.034
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2022,24.22,-0.436
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2023,25.07,0.414
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2024,25.13,0.474
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,2025,24.45,-0.206
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2016,24.88,0.097
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2017,24.56,-0.223
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2018,24.68,-0.103
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2019,25.05,0.267
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2020,24.59,-0.193
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2021,24.81,0.027
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2022,24.34,-0.443
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2023,25.15,0.367
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2024,25.19,0.407
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,2025,24.58,-0.203
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2016,27.98,0.257
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2017,27.58,-0.143
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2018,27.61,-0.113
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2019,27.75,0.027
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2020,27.84,0.117
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2021,27.32,-0.403
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2022,27.49,-0.233
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2023,27.74,0.017
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2024,28.31,0.587
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,2025,27.61,-0.113

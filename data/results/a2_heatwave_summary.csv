@@ -1,0 +1,68 @@
+﻿location_id,location_name,site_name,region,is_core,kind,tmax_p90,n_events,total_days,longest_days,peak_tmax
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,Tuyệt đối: Tmax ≥ 35 °C,33.5,9,75,31,38.0
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,Tuyệt đối: Tmax ≥ 35 °C,34.8,49,216,11,39.9
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,34.2,26,103,7,38.9
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,Tuyệt đối: Tmax ≥ 35 °C,33.7,9,74,28,37.3
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,Tuyệt đối: Tmax ≥ 35 °C,33.4,7,50,13,37.8
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,Tuyệt đối: Tmax ≥ 35 °C,34.3,28,183,24,40.8
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,Tuyệt đối: Tmax ≥ 35 °C,34.0,26,117,11,37.8
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,Tuyệt đối: Tmax ≥ 35 °C,34.0,19,112,15,37.0
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,Tuyệt đối: Tmax ≥ 35 °C,34.5,28,179,22,38.0
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,Tuyệt đối: Tmax ≥ 35 °C,33.6,7,50,12,36.9
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,Tuyệt đối: Tmax ≥ 35 °C,33.3,1,6,6,36.1
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,Tuyệt đối: Tmax ≥ 35 °C,34.1,17,96,12,37.4
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,Tuyệt đối: Tmax ≥ 35 °C,35.1,63,280,10,40.5
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,Tuyệt đối: Tmax ≥ 35 °C,34.1,28,114,7,39.8
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,Tuyệt đối: Tmax ≥ 35 °C,34.8,47,274,14,38.8
+HUE,Huế,Huế,Bắc Trung Bộ,True,Tuyệt đối: Tmax ≥ 35 °C,34.6,39,215,21,38.9
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,Tuyệt đối: Tmax ≥ 35 °C,34.9,52,251,15,40.2
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,Tuyệt đối: Tmax ≥ 35 °C,35.0,47,281,24,37.8
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,34.8,44,177,8,39.5
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,30.9,2,9,5,36.7
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,32.9,3,12,5,37.9
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,Tuyệt đối: Tmax ≥ 35 °C,35.3,54,323,23,40.1
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,Tuyệt đối: Tmax ≥ 35 °C,34.7,45,225,12,39.9
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,35.2,70,297,10,41.0
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,Tuyệt đối: Tmax ≥ 35 °C,36.0,83,608,32,39.5
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,Tuyệt đối: Tmax ≥ 35 °C,33.4,11,47,6,38.3
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,Tuyệt đối: Tmax ≥ 35 °C,34.4,39,191,12,40.1
+SLA,Sơn La,Sơn La,Tây Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,32.9,12,59,7,38.9
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,Tuyệt đối: Tmax ≥ 35 °C,35.6,68,386,16,41.4
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,Tuyệt đối: Tmax ≥ 35 °C,33.9,11,78,19,37.3
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,35.0,55,228,8,39.7
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,Tuyệt đối: Tmax ≥ 35 °C,35.2,62,262,10,40.3
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,Tuyệt đối: Tmax ≥ 35 °C,33.6,7,54,15,37.6
+AGG,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False,Tương đối: Tmax > P90 địa phương,33.5,31,270,48,38.0
+BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,Tương đối: Tmax > P90 địa phương,34.8,51,227,11,39.9
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,Tương đối: Tmax > P90 địa phương,34.2,46,204,8,38.9
+CMU,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False,Tương đối: Tmax > P90 địa phương,33.7,36,249,45,37.3
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,Tương đối: Tmax > P90 địa phương,33.4,28,251,43,37.8
+DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,Tương đối: Tmax > P90 địa phương,34.3,38,259,29,40.8
+DLK,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False,Tương đối: Tmax > P90 địa phương,34.0,36,256,17,37.8
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,Tương đối: Tmax > P90 địa phương,34.0,39,271,20,37.0
+DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,Tương đối: Tmax > P90 địa phương,34.5,37,255,23,38.0
+DTP,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False,Tương đối: Tmax > P90 địa phương,33.6,36,221,40,36.9
+GLI,Gia Lai,Quy Nhơn,Nam Trung Bộ,False,Tương đối: Tmax > P90 địa phương,33.3,40,240,21,36.1
+HCM,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True,Tương đối: Tmax > P90 địa phương,34.1,40,257,23,37.4
+HNI,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True,Tương đối: Tmax > P90 địa phương,35.1,58,247,10,40.5
+HPG,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False,Tương đối: Tmax > P90 địa phương,34.1,51,231,12,39.8
+HTH,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False,Tương đối: Tmax > P90 địa phương,34.8,51,294,16,38.8
+HUE,Huế,Huế,Bắc Trung Bộ,True,Tương đối: Tmax > P90 địa phương,34.6,50,276,21,38.9
+HYN,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False,Tương đối: Tmax > P90 địa phương,34.9,52,251,15,40.2
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,Tương đối: Tmax > P90 địa phương,35.0,42,246,22,37.8
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,Tương đối: Tmax > P90 địa phương,34.8,50,204,8,39.5
+LCU,Lai Châu,Lai Châu,Tây Bắc,False,Tương đối: Tmax > P90 địa phương,30.9,46,208,9,36.7
+LDG,Lâm Đồng,Đà Lạt,Tây Nguyên,True,Tương đối: Tmax > P90 địa phương,25.3,37,186,16,28.6
+LSN,Lạng Sơn,Lạng Sơn,Đông Bắc,False,Tương đối: Tmax > P90 địa phương,32.9,49,222,8,37.9
+NAN,Nghệ An,Vinh,Bắc Trung Bộ,True,Tương đối: Tmax > P90 địa phương,35.3,46,263,15,40.1
+NBH,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False,Tương đối: Tmax > P90 địa phương,34.7,49,255,12,39.9
+PTO,Phú Thọ,Việt Trì,Đông Bắc,False,Tương đối: Tmax > P90 địa phương,35.2,53,226,10,41.0
+QNG,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False,Tương đối: Tmax > P90 địa phương,36.0,41,231,20,39.5
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,Tương đối: Tmax > P90 địa phương,33.4,55,247,12,38.3
+QTI,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False,Tương đối: Tmax > P90 địa phương,34.4,48,262,16,40.1
+SLA,Sơn La,Sơn La,Tây Bắc,False,Tương đối: Tmax > P90 địa phương,32.9,37,198,12,38.9
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,Tương đối: Tmax > P90 địa phương,35.6,46,248,15,41.4
+TNH,Tây Ninh,Tân An,Đông Nam Bộ,False,Tương đối: Tmax > P90 địa phương,33.9,35,213,19,37.3
+TNN,Thái Nguyên,Thái Nguyên,Đông Bắc,False,Tương đối: Tmax > P90 địa phương,35.0,55,221,8,39.7
+TQG,Tuyên Quang,Tuyên Quang,Đông Bắc,False,Tương đối: Tmax > P90 địa phương,35.2,49,200,8,40.3
+VLG,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False,Tương đối: Tmax > P90 địa phương,33.6,32,242,43,37.6

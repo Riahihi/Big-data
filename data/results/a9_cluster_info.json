@@ -1,0 +1,67 @@
+{
+  "k_scores": [
+    {
+      "k": 2,
+      "silhouette": 0.5146254794005877,
+      "wssse": 540.7275999216911
+    },
+    {
+      "k": 3,
+      "silhouette": 0.5007491915983528,
+      "wssse": 429.20560016089496
+    },
+    {
+      "k": 4,
+      "silhouette": 0.6317300413350895,
+      "wssse": 248.58225849295494
+    },
+    {
+      "k": 5,
+      "silhouette": 0.629204583678928,
+      "wssse": 172.76104641659379
+    },
+    {
+      "k": 6,
+      "silhouette": 0.6016955696585656,
+      "wssse": 155.29786319112407
+    },
+    {
+      "k": 7,
+      "silhouette": 0.6034562161302437,
+      "wssse": 122.65262329402682
+    }
+  ],
+  "best_k": 4,
+  "pca_explained_variance": [
+    0.4440311881287454,
+    0.23988573422545065
+  ],
+  "features": [
+    "temp_m01",
+    "temp_m02",
+    "temp_m03",
+    "temp_m04",
+    "temp_m05",
+    "temp_m06",
+    "temp_m07",
+    "temp_m08",
+    "temp_m09",
+    "temp_m10",
+    "temp_m11",
+    "temp_m12",
+    "rain_share_m01",
+    "rain_share_m02",
+    "rain_share_m03",
+    "rain_share_m04",
+    "rain_share_m05",
+    "rain_share_m06",
+    "rain_share_m07",
+    "rain_share_m08",
+    "rain_share_m09",
+    "rain_share_m10",
+    "rain_share_m11",
+    "rain_share_m12",
+    "log_annual_p",
+    "mean_dtr"
+  ]
+}

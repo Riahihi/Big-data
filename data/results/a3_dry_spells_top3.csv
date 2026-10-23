@@ -1,0 +1,103 @@
+﻿location_id,start_date,end_date,length_days,peak_tmax,mean_tmax,total_precip_mm,rank,location_name,site_name,region,is_core
+AGG,2016-01-25,2016-04-27,94,36.7,33.52,2.4,1,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False
+AGG,2019-01-23,2019-03-16,53,35.2,32.19,2.0,2,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False
+AGG,2020-02-19,2020-04-07,49,35.1,33.32,2.0,3,An Giang,Rạch Giá,Đồng bằng sông Cửu Long,False
+BNH,2024-12-07,2025-01-23,48,26.3,22.16,2.9,1,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False
+BNH,2022-12-02,2023-01-09,39,24.1,20.49,3.0,2,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False
+BNH,2021-11-22,2021-12-24,33,27.3,23.85,0.7,3,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False
+CBG,2021-11-26,2021-12-23,28,26.1,22.58,1.2,1,Cao Bằng,Cao Bằng,Đông Bắc,False
+CBG,2024-12-13,2025-01-07,26,24.2,20.25,1.0,2,Cao Bằng,Cao Bằng,Đông Bắc,False
+CBG,2016-02-02,2016-02-22,21,31.4,19.46,0.2,3,Cao Bằng,Cao Bằng,Đông Bắc,False
+CMU,2016-01-15,2016-04-26,103,36.9,33.48,8.0,1,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False
+CMU,2024-01-07,2024-03-12,66,34.8,32.68,7.0,2,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False
+CMU,2019-12-04,2020-01-29,57,34.5,31.48,2.6,3,Cà Mau,Cà Mau,Đồng bằng sông Cửu Long,False
+CTO,2016-01-30,2016-05-04,96,37.6,33.3,2.1,1,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True
+CTO,2024-01-05,2024-03-31,87,34.3,31.91,9.1,2,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True
+CTO,2019-01-23,2019-03-20,57,34.1,31.52,3.3,3,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True
+DBN,2020-11-17,2021-01-10,55,31.6,25.07,1.4,1,Điện Biên,Điện Biên Phủ,Tây Bắc,True
+DBN,2024-12-07,2025-01-25,50,31.4,24.99,0.5,2,Điện Biên,Điện Biên Phủ,Tây Bắc,True
+DBN,2019-11-08,2019-12-26,49,32.0,27.98,0.4,3,Điện Biên,Điện Biên Phủ,Tây Bắc,True
+DLK,2019-11-12,2020-04-06,147,36.1,30.08,1.0,1,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False
+DLK,2016-01-01,2016-04-04,95,36.5,31.52,0.9,2,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False
+DLK,2023-12-24,2024-03-27,95,35.0,30.54,1.6,3,Đắk Lắk,Buôn Ma Thuột,Tây Nguyên,False
+DNG,2019-02-13,2019-03-14,30,30.3,28.52,1.7,1,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True
+DNG,2020-03-16,2020-04-11,27,31.4,29.05,3.2,2,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True
+DNG,2016-03-28,2016-04-17,21,34.1,29.55,2.2,3,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True
+DNI,2016-01-01,2016-04-17,108,35.5,33.59,2.5,1,Đồng Nai,Biên Hòa,Đông Nam Bộ,False
+DNI,2024-01-17,2024-03-27,71,35.9,33.38,1.3,2,Đồng Nai,Biên Hòa,Đông Nam Bộ,False
+DNI,2019-01-03,2019-03-11,68,35.9,33.83,2.9,3,Đồng Nai,Biên Hòa,Đông Nam Bộ,False
+DTP,2024-01-07,2024-03-31,85,34.7,31.92,5.2,1,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False
+DTP,2016-02-07,2016-04-27,81,36.6,32.97,1.6,2,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False
+DTP,2019-01-23,2019-03-23,60,34.7,31.36,4.0,3,Đồng Tháp,Mỹ Tho,Đồng bằng sông Cửu Long,False
+GLI,2016-03-28,2016-05-01,35,32.4,29.64,3.6,1,Gia Lai,Quy Nhơn,Nam Trung Bộ,False
+GLI,2019-02-19,2019-03-15,25,30.7,28.52,2.7,2,Gia Lai,Quy Nhơn,Nam Trung Bộ,False
+GLI,2020-01-04,2020-01-28,25,27.5,26.19,6.6,3,Gia Lai,Quy Nhơn,Nam Trung Bộ,False
+HCM,2016-01-01,2016-04-11,102,34.7,33.12,2.6,1,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True
+HCM,2019-01-03,2019-03-20,77,35.8,32.71,4.2,2,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True
+HCM,2019-11-25,2020-02-08,76,34.2,31.59,2.8,3,TP. Hồ Chí Minh,TP. Hồ Chí Minh,Đông Nam Bộ,True
+HNI,2024-12-12,2025-01-24,44,25.9,22.01,3.2,1,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True
+HNI,2022-10-22,2022-11-16,26,32.7,29.27,5.8,2,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True
+HNI,2016-02-02,2016-02-22,21,34.0,20.79,0.8,3,Hà Nội,Hà Nội,Đồng bằng sông Hồng,True
+HPG,2020-12-16,2021-02-07,54,26.7,20.3,2.9,1,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False
+HPG,2024-12-04,2025-01-13,41,27.5,22.26,1.8,2,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False
+HPG,2022-12-11,2023-01-09,30,23.8,20.92,1.9,3,Hải Phòng,Hải Phòng,Đồng bằng sông Hồng,False
+HTH,2020-06-17,2020-07-20,34,37.5,35.18,3.6,1,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False
+HTH,2019-06-08,2019-07-01,24,37.9,36.32,1.2,2,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False
+HTH,2021-07-26,2021-08-16,22,37.4,35.28,0.6,3,Hà Tĩnh,Hà Tĩnh,Bắc Trung Bộ,False
+HUE,2016-03-29,2016-04-19,22,36.5,31.36,1.1,1,Huế,Huế,Bắc Trung Bộ,True
+HUE,2020-04-28,2020-05-17,20,35.1,32.12,1.7,2,Huế,Huế,Bắc Trung Bộ,True
+HUE,2019-01-30,2019-02-17,19,31.2,28.31,1.8,3,Huế,Huế,Bắc Trung Bộ,True
+HYN,2024-12-07,2025-01-24,49,26.1,21.84,4.0,1,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False
+HYN,2021-11-23,2021-12-24,32,26.8,23.67,1.0,2,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False
+HYN,2022-12-11,2023-01-09,30,23.5,20.97,1.7,3,Hưng Yên,Hưng Yên,Đồng bằng sông Hồng,False
+KHA,2024-03-22,2024-04-30,40,37.5,34.5,6.8,1,Khánh Hòa,Nha Trang,Nam Trung Bộ,True
+KHA,2016-03-03,2016-04-10,39,33.8,31.35,2.4,2,Khánh Hòa,Nha Trang,Nam Trung Bộ,True
+KHA,2020-01-03,2020-02-08,37,31.3,28.88,3.4,3,Khánh Hòa,Nha Trang,Nam Trung Bộ,True
+LCI,2022-10-22,2022-11-14,24,32.5,29.16,4.6,1,Lào Cai,Yên Bái,Tây Bắc,False
+LCI,2024-12-15,2025-01-07,24,24.7,21.22,1.6,2,Lào Cai,Yên Bái,Tây Bắc,False
+LCI,2016-02-02,2016-02-22,21,31.1,20.56,0.7,3,Lào Cai,Yên Bái,Tây Bắc,False
+LCU,2024-12-29,2025-01-25,28,27.8,19.86,1.4,1,Lai Châu,Lai Châu,Tây Bắc,False
+LCU,2025-11-20,2025-12-17,28,24.1,21.79,3.6,2,Lai Châu,Lai Châu,Tây Bắc,False
+LCU,2019-11-03,2019-11-24,22,27.0,23.39,3.4,3,Lai Châu,Lai Châu,Tây Bắc,False
+LDG,2019-12-01,2020-01-25,56,24.3,21.74,3.9,1,Lâm Đồng,Đà Lạt,Tây Nguyên,True
+LDG,2023-12-30,2024-02-07,40,25.1,22.39,3.4,2,Lâm Đồng,Đà Lạt,Tây Nguyên,True
+LDG,2025-01-17,2025-02-11,26,24.2,20.89,1.3,3,Lâm Đồng,Đà Lạt,Tây Nguyên,True
+LSN,2021-11-23,2022-01-06,45,25.0,20.22,6.4,1,Lạng Sơn,Lạng Sơn,Đông Bắc,False
+LSN,2022-12-03,2023-01-09,38,22.0,18.23,5.3,2,Lạng Sơn,Lạng Sơn,Đông Bắc,False
+LSN,2023-02-12,2023-03-11,28,28.0,22.56,2.9,3,Lạng Sơn,Lạng Sơn,Đông Bắc,False
+NAN,2016-03-26,2016-04-17,23,36.8,28.33,1.9,1,Nghệ An,Vinh,Bắc Trung Bộ,True
+NAN,2021-06-14,2021-07-04,21,37.1,35.47,0.9,2,Nghệ An,Vinh,Bắc Trung Bộ,True
+NAN,2021-01-08,2021-01-27,20,22.8,18.85,0.9,3,Nghệ An,Vinh,Bắc Trung Bộ,True
+NBH,2020-12-16,2021-01-24,40,26.5,18.85,1.6,1,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False
+NBH,2021-11-23,2021-12-25,33,26.4,23.48,1.8,2,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False
+NBH,2024-12-12,2025-01-07,27,25.4,21.41,0.9,3,Ninh Bình,Ninh Bình,Đồng bằng sông Hồng,False
+PTO,2024-12-13,2025-01-07,26,25.8,21.69,0.9,1,Phú Thọ,Việt Trì,Đông Bắc,False
+PTO,2017-10-19,2017-11-11,24,30.5,27.5,2.9,2,Phú Thọ,Việt Trì,Đông Bắc,False
+PTO,2022-10-22,2022-11-14,24,33.2,29.25,3.5,3,Phú Thọ,Việt Trì,Đông Bắc,False
+QNG,2024-03-22,2024-05-01,41,37.9,33.45,6.1,1,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False
+QNG,2019-02-13,2019-03-10,26,35.2,30.82,0.9,2,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False
+QNG,2016-03-29,2016-04-17,20,37.7,32.15,2.2,3,Quảng Ngãi,Quảng Ngãi,Nam Trung Bộ,False
+QNH,2020-12-15,2021-02-08,56,25.9,20.06,2.0,1,Quảng Ninh,Hạ Long,Đông Bắc,True
+QNH,2024-12-11,2025-01-13,34,25.2,21.39,1.0,2,Quảng Ninh,Hạ Long,Đông Bắc,True
+QNH,2022-12-11,2023-01-08,29,23.3,20.63,1.5,3,Quảng Ninh,Hạ Long,Đông Bắc,True
+QTI,2021-07-26,2021-08-19,25,36.3,34.27,3.1,1,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False
+QTI,2019-06-08,2019-06-30,23,38.3,36.17,2.3,2,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False
+QTI,2021-06-14,2021-07-05,22,36.4,34.64,0.2,3,Quảng Trị,Đồng Hới,Bắc Trung Bộ,False
+SLA,2024-12-07,2025-02-15,71,31.1,21.74,3.0,1,Sơn La,Sơn La,Tây Bắc,False
+SLA,2020-11-17,2021-01-16,61,29.7,21.07,0.9,2,Sơn La,Sơn La,Tây Bắc,False
+SLA,2024-01-30,2024-03-18,49,34.6,27.41,2.8,3,Sơn La,Sơn La,Tây Bắc,False
+THA,2020-12-15,2021-02-08,56,26.1,20.02,3.7,1,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False
+THA,2016-02-24,2016-03-22,28,27.8,22.83,2.9,2,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False
+THA,2024-12-12,2025-01-07,27,25.3,21.24,0.9,3,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False
+TNH,2016-01-04,2016-04-27,115,36.5,33.02,4.9,1,Tây Ninh,Tân An,Đông Nam Bộ,False
+TNH,2024-01-07,2024-03-31,85,34.7,32.48,4.9,2,Tây Ninh,Tân An,Đông Nam Bộ,False
+TNH,2019-01-09,2019-03-20,71,34.6,31.72,4.8,3,Tây Ninh,Tân An,Đông Nam Bộ,False
+TNN,2024-10-29,2024-11-24,27,33.1,30.03,1.8,1,Thái Nguyên,Thái Nguyên,Đông Bắc,False
+TNN,2024-12-12,2025-01-07,27,26.6,22.06,1.5,2,Thái Nguyên,Thái Nguyên,Đông Bắc,False
+TNN,2022-12-02,2022-12-27,26,24.7,21.22,1.6,3,Thái Nguyên,Thái Nguyên,Đông Bắc,False
+TQG,2022-12-02,2022-12-27,26,24.7,20.92,2.3,1,Tuyên Quang,Tuyên Quang,Đông Bắc,False
+TQG,2024-12-13,2025-01-07,26,25.3,21.64,0.9,2,Tuyên Quang,Tuyên Quang,Đông Bắc,False
+TQG,2017-10-17,2017-11-08,23,30.3,27.16,3.0,3,Tuyên Quang,Tuyên Quang,Đông Bắc,False
+VLG,2016-01-25,2016-04-27,94,36.6,33.11,2.3,1,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False
+VLG,2024-01-05,2024-04-01,88,34.6,32.27,7.8,2,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False
+VLG,2020-02-18,2020-04-07,50,35.3,33.03,2.0,3,Vĩnh Long,Vĩnh Long,Đồng bằng sông Cửu Long,False

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đồ án Big Data - Thời tiết Việt Nam</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/vendor/echarts.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="title-row">
+      <div>
+        <h1>Phân tích nhiệt độ và lượng mưa Việt Nam</h1>
+        <div class="sub">Đồ án Big Data - xử lý bằng PySpark, dữ liệu Open-Meteo</div>
+      </div>
+      <button class="icon-btn" id="themeBtn" type="button">Chế độ: tự động</button>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="overview" aria-selected="true">Tổng quan</button>
+      <button role="tab" data-tab="q1">Câu 1: Nhiệt độ</button>
+      <button role="tab" data-tab="q2">Câu 2: Lượng mưa</button>
+      <button role="tab" data-tab="q3">Câu 3: Ngày mưa lớn</button>
+      <button role="tab" data-tab="adv">Phân tích thêm</button>
+      <button role="tab" data-tab="verify">Kiểm tra kết quả</button>
+      <button role="tab" data-tab="sql">Truy vấn SQL</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- TỔNG QUAN -->
+  <section class="tab active" id="tab-overview">
+    <h2>Tổng quan</h2>
+    <p class="lead" id="ovLead">Đang tải…</p>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="card-head"><div><h3>Các bước xử lý</h3><p>Thời gian chạy lấy từ lần chạy gần nhất.</p></div></div>
+      <div class="flow" id="flow"></div>
+    </div>
+    <div class="grid g-2-1">
+      <div class="card">
+        <div class="card-head">
+          <div><h3>Các địa điểm lấy dữ liệu</h3><p>Màu theo chỉ số chọn bên cạnh (2016-2025). Rê chuột vào điểm để xem số liệu.</p></div>
+          <select id="mapMetric" aria-label="Chỉ số tô màu">
+            <option value="temp">Nhiệt độ TB năm</option>
+            <option value="rain">Tổng mưa năm</option>
+            <option value="su35">Số ngày nắng nóng/năm</option>
+            <option value="trend">Xu hướng °C/10 năm</option>
+            <option value="rx1">Mưa ngày lớn nhất</option>
+          </select>
+        </div>
+        <div class="chart xtall" id="mapChart"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Nguồn dữ liệu</h3></div></div>
+        <div id="sourceInfo"></div>
+        <h3 style="margin-top:16px">Chất lượng dữ liệu</h3>
+        <div id="qualityInfo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÂU 1 -->
+  <section class="tab" id="tab-q1">
+    <h2>Câu 1: Nhiệt độ trung bình mỗi tháng</h2>
+    <p class="lead">Lấy trung bình các giá trị nhiệt độ theo giờ (ở độ cao 2 m) trong tháng, tính riêng cho từng năm.</p>
+    <div class="controls">
+      <div class="seg" data-scope-for="q1"><button aria-pressed="true" data-scope="core">Theo đề (10 điểm, 2019-2023)</button><button data-scope="full">Mở rộng (34 tỉnh, 2016-2025)</button></div>
+    </div>
+    <div class="controls"><div class="chips" id="q1Chips"></div></div>
+    <div class="card">
+      <div class="card-head"><div><h3>Nhiệt độ TB tháng theo thời gian</h3><p id="q1Hint">Chọn tối đa 8 địa điểm.</p></div><a id="q1Csv" class="icon-btn" href="#">Tải CSV</a></div>
+      <div class="chart tall" id="q1Line"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Nhiệt độ TB từng tháng (trung bình các năm)</h3><p>Xếp từ Bắc vào Nam. Miền Bắc có mùa đông lạnh rõ, còn miền Nam nóng gần như cả năm.</p></div></div>
+      <div class="chart tall" id="q1Heat"></div>
+      <details class="tbl"><summary>Xem bảng số liệu</summary><div class="table-wrap" id="q1Table"></div></details>
+    </div>
+  </section>
+
+  <!-- CÂU 2 -->
+  <section class="tab" id="tab-q2">
+    <h2>Câu 2: Tổng lượng mưa mỗi tháng</h2>
+    <p class="lead">Cộng mưa theo giờ thành mưa ngày, rồi cộng mưa ngày thành mưa tháng. Lưu ý: giá trị mưa lúc H là lượng mưa của 1 giờ trước đó, nên mưa ngày D được tính từ giá trị 01:00 ngày D đến 00:00 ngày D+1.</p>
+    <div class="controls">
+      <div class="seg" data-scope-for="q2"><button aria-pressed="true" data-scope="core">Theo đề (10 điểm, 2019-2023)</button><button data-scope="full">Mở rộng (34 tỉnh, 2016-2025)</button></div>
+    </div>
+    <div class="controls"><div class="chips" id="q2Chips"></div></div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="card-head"><div><h3>Lượng mưa TB theo tháng</h3><p>So sánh tối đa 4 địa điểm đầu tiên được chọn.</p></div></div>
+        <div class="chart" id="q2Clim"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Tổng mưa theo năm</h3><p>&nbsp;</p></div></div>
+        <div class="chart" id="q2Annual"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Mưa từng tháng</h3><p id="q2SeriesHint"></p></div>
+        <div style="display:flex;gap:8px"><select id="q2Focus" aria-label="Địa điểm"></select><a id="q2Csv" class="icon-btn" href="#">Tải CSV</a></div></div>
+      <div class="chart" id="q2Series"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Mùa mưa ở các vùng</h3><p>Miền Bắc và miền Nam mưa nhiều khoảng tháng 5 đến 10, còn miền Trung mưa nhiều vào tháng 9 đến 12.</p></div></div>
+      <div class="chart tall" id="q2Heat"></div>
+      <details class="tbl"><summary>Xem bảng số liệu</summary><div class="table-wrap" id="q2Table"></div></details>
+    </div>
+  </section>
+
+  <!-- CÂU 3 -->
+  <section class="tab" id="tab-q3">
+    <h2>Câu 3: Những ngày mưa lớn nhất</h2>
+    <p class="lead">Top 5 ngày có tổng lượng mưa lớn nhất ở mỗi địa điểm, chỉ tính những ngày đủ 24 giờ dữ liệu. Nhóm dùng <code>rank()</code> nên nếu có ngày bằng nhau ở hạng 5 thì lấy cả.</p>
+    <div class="controls">
+      <div class="seg" data-scope-for="q3"><button aria-pressed="true" data-scope="core">Theo đề (10 điểm, 2019-2023)</button><button data-scope="full">Mở rộng (34 tỉnh, 2016-2025)</button></div>
+      <a id="q3Csv" class="icon-btn" href="#">Tải CSV</a>
+    </div>
+    <div class="top5-grid" id="q3Cards"></div>
+    <div class="card">
+      <div class="card-head"><div><h3>Tự chọn khoảng thời gian</h3><p>Chạy lại câu 3 bằng Spark trên server với khoảng ngày và số ngày tùy chọn.</p></div></div>
+      <div class="controls">
+        <label class="inline">Từ <input type="date" id="trStart" value="2019-01-01" min="2016-01-01" max="2025-12-31"></label>
+        <label class="inline">Đến <input type="date" id="trEnd" value="2023-12-31" min="2016-01-01" max="2025-12-31"></label>
+        <label class="inline">Top N <input type="number" id="trN" value="5" min="1" max="50" style="width:64px"></label>
+        <select id="trLoc" aria-label="Địa điểm"><option value="">Tất cả các tỉnh</option></select>
+        <button class="btn" id="trRun" type="button">Chạy</button>
+        <span class="status" id="trStatus"></span>
+      </div>
+      <div class="table-wrap" id="trTable"></div>
+      <details class="tbl"><summary>Xem physical plan</summary><pre class="plan" id="trPlan"></pre></details>
+    </div>
+  </section>
+
+  <!-- NÂNG CAO -->
+  <section class="tab" id="tab-adv">
+    <h2>Phân tích thêm (34 tỉnh, 2016-2025)</h2>
+    <p class="lead">Phần nhóm làm thêm ngoài 3 câu hỏi của đề, đều tính bằng PySpark.</p>
+    <div class="grid g-2-1">
+      <div class="card">
+        <div class="card-head"><div><h3>Năm nào nóng, năm nào lạnh</h3><p>So với trung bình 10 năm của từng nơi. Xanh là lạnh hơn, đỏ là nóng hơn.</p></div></div>
+        <div class="chart xtall" id="advStripes"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Xu hướng nhiệt độ</h3><p id="trendHint">°C/10 năm.</p></div></div>
+        <div class="chart xtall" id="advTrend"></div>
+      </div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="card-head"><div><h3>Chênh lệch nhiệt độ cả nước theo năm</h3><p>Trung bình của 34 điểm.</p></div></div>
+        <div class="chart short" id="advNational"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Số ngày nắng nóng theo vùng</h3><p>Số ngày có nhiệt độ cao nhất từ 35 °C trở lên, TB các tỉnh trong vùng.</p></div></div>
+        <div class="chart short" id="advHot"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Các đợt nắng nóng (từ 3 ngày liên tiếp)</h3><p>Dùng 2 ngưỡng: từ 35 °C và vượt mức P90 của từng nơi (do dữ liệu ERA5 thường thấp hơn trạm đo).</p></div>
+        <select id="hwLoc" aria-label="Địa điểm"></select></div>
+      <div class="chart short" id="advHw"></div>
+      <details class="tbl"><summary>Bảng tổng hợp các tỉnh</summary><div class="table-wrap" id="hwTable"></div></details>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="card-head"><div><h3>Mưa lớn theo chu kỳ lặp lại</h3><p>Dùng phân phối Gumbel. Chỉ có 10 năm dữ liệu nên các chu kỳ trên 10 năm chỉ mang tính tham khảo.</p></div></div>
+        <div class="controls"><div class="chips" id="rlChips"></div></div>
+        <div class="chart" id="advRL"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Số ngày mưa theo cấp mỗi năm</h3><p>Phân cấp theo QĐ 18/2021/QĐ-TTg.</p></div></div>
+        <div class="chart tall" id="advClass"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>30 đợt mưa lớn nhất (tổng 3 ngày)</h3><p>Mỗi đợt chỉ tính 1 lần.</p></div></div>
+      <div class="table-wrap" id="evTable"></div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div class="card-head"><div><h3>Mưa và nhiệt độ theo giờ trong ngày</h3><p id="diHint"></p></div>
+          <div style="display:flex;gap:8px"><select id="diLoc" aria-label="Địa điểm"></select>
+          <select id="diVar" aria-label="Biến"><option value="wet_hour_pct">% giờ có mưa</option><option value="avg_temp_c">Nhiệt độ TB</option></select></div></div>
+        <div class="chart tall" id="advDiurnal"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Phân nhóm khí hậu (KMeans)</h3><p id="clHint"></p></div></div>
+        <div class="chart tall" id="advCluster"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Các chỉ số theo năm</h3><p>TXx, TNn: nhiệt độ cao nhất, thấp nhất. SU35: số ngày từ 35 °C. R50mm: số ngày mưa trên 50 mm. Rx1day, Rx5day: mưa lớn nhất trong 1 ngày, 5 ngày. CDD, CWD: số ngày khô, ướt liên tiếp dài nhất. SDII: lượng mưa TB của ngày mưa.</p></div>
+        <div style="display:flex;gap:8px"><select id="ciLoc" aria-label="Địa điểm"></select><a class="icon-btn" href="/download/a1_climate_indices.csv">Tải CSV</a></div></div>
+      <div class="table-wrap" id="ciTable"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Thời gian khô hạn dài nhất</h3><p>Số ngày liên tiếp mưa dưới 1 mm, top 3 mỗi tỉnh.</p></div></div>
+      <div class="table-wrap" id="dryTable"></div>
+    </div>
+  </section>
+
+  <!-- KIỂM CHỨNG -->
+  <section class="tab" id="tab-verify">
+    <h2>Kiểm tra kết quả</h2>
+    <p class="lead">Nhóm tính lại 3 câu hỏi bằng pandas (đọc thẳng file gốc, không qua Spark) để so sánh, và so thêm với dữ liệu theo ngày của Open-Meteo.</p>
+    <div class="grid g2">
+      <div class="card"><div class="card-head"><div><h3>Kết quả</h3></div><span id="verifyAll"></span></div><div class="check-list" id="checks"></div></div>
+      <div class="card">
+        <div class="card-head"><div><h3>Cộng tay 1 ngày</h3><p id="manualHint"></p></div></div>
+        <div class="chart" id="manualChart"></div>
+      </div>
+    </div>
+    <h2 style="margin-top:24px">Đo hiệu năng (mức B)</h2>
+    <p class="lead" id="benchEnv"></p>
+    <div class="grid g2">
+      <div class="card"><div class="card-head"><div><h3>Dung lượng</h3><p>Cùng 1 bộ dữ liệu theo giờ.</p></div></div><div class="chart short" id="bStorage"></div></div>
+      <div class="card"><div class="card-head"><div><h3>Thời gian đọc và tính câu 1</h3><p>Chạy 3 lần lấy trung vị.</p></div></div><div class="chart short" id="bFormat"></div></div>
+      <div class="card"><div class="card-head"><div><h3>Có phân vùng và không phân vùng</h3><p>Lấy dữ liệu Hà Nội năm 2024.</p></div></div><div id="bPrune"></div></div>
+      <div class="card"><div class="card-head"><div><h3>Thay đổi số luồng Spark</h3><p>Gộp dữ liệu giờ thành ngày.</p></div></div><div class="chart short" id="bScale"></div></div>
+    </div>
+    <div class="card"><div class="card-head"><div><h3>So với pandas</h3></div></div><div id="bPandas"></div></div>
+  </section>
+
+  <!-- SQL LAB -->
+  <section class="tab" id="tab-sql">
+    <h2>Truy vấn SQL</h2>
+    <p class="lead">Viết câu lệnh Spark SQL để truy vấn dữ liệu. Các bảng có thể dùng: <code>hourly</code>, <code>daily</code>, <code>q1_monthly_temp</code>, <code>q2_monthly_precip</code>, <code>climate_indices</code>, <code>heatwave_events</code>. Chỉ cho chạy lệnh SELECT.</p>
+    <div class="card">
+      <div class="examples" id="sqlExamples"></div>
+      <textarea class="sql" id="sqlText" spellcheck="false"></textarea>
+      <div class="controls" style="margin-top:8px"><button class="btn" id="sqlRun" type="button">Chạy</button><span class="status" id="sqlStatus"></span></div>
+      <div class="error" id="sqlError"></div>
+      <div class="table-wrap" id="sqlTable"></div>
+      <details class="tbl"><summary>Xem physical plan</summary><pre class="plan" id="sqlPlan"></pre></details>
+    </div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Python 3.12, Java 17 (bắt buộc cho PySpark 4). Phiên bản đã kiểm thử:
+pyspark==4.0.1
+pandas==2.2.3
+pyarrow==26.0.0
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2
+requests==2.34.2
+fastapi==0.161.1
+uvicorn[standard]==0.54.0
+pytest==9.1.1
