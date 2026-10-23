@@ -1,9 +1,9 @@
 # Nhóm Đồ Án BigData
 Thành viên nhóm:
-Phan Duy Minh Thắng - Mã SV: 21T1020694
-Lê Anh Quân - Mã SV: 22T1020710
-Lê Trần Khánh Tùng - Mã SV: 21T1020819
-Đậu Hà Văn - Mã SV: 21T1020826
+- Phan Duy Minh Thắng - Mã SV: 21T1020694
+- Lê Anh Quân - Mã SV: 22T1020710
+- Lê Trần Khánh Tùng - Mã SV: 21T1020819
+- Đậu Hà Văn - Mã SV: 21T1020826
 
 # Đồ án Big Data: phân tích nhiệt độ và lượng mưa ở Việt Nam bằng PySpark
 
