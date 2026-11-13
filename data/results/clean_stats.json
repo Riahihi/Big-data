@@ -305,5 +305,5 @@
   "null_precipitation_after_clean": 0,
   "n_locations": 34,
   "parquet_roundtrip_ok": true,
-  "elapsed_s": 231.5
+  "elapsed_s": 120.5
 }

@@ -3,57 +3,56 @@
     "ingest": {
       "title": "Thu thập & lưu dữ liệu gốc",
       "status": "ok",
-      "elapsed_s": 2970.0,
-      "finished_at": "2026-10-23T09:16:46",
-      "note": "Khoảng thời gian từ request đầu tới request cuối (~50 phút), gồm thời gian chờ khi API báo vượt giới hạn theo giờ (HTTP 429) và một lần chạy tiếp sau lỗi phản hồi rỗng"
+      "elapsed_s": 0.9,
+      "finished_at": "2026-11-13T23:19:43"
     },
     "daily": {
       "title": "Tải daily API để đối chiếu",
       "status": "ok",
-      "elapsed_s": 31.8,
-      "finished_at": "2026-10-23T09:17:18"
+      "elapsed_s": 0.3,
+      "finished_at": "2026-11-13T23:19:43"
     },
     "clean": {
       "title": "Làm sạch & ghi Parquet",
       "status": "ok",
-      "elapsed_s": 233.2,
-      "finished_at": "2026-11-13T20:52:28"
+      "elapsed_s": 121.6,
+      "finished_at": "2026-11-13T23:42:17"
     },
     "analysis": {
       "title": "Ba câu hỏi phân tích",
       "status": "ok",
-      "elapsed_s": 88.0,
-      "finished_at": "2026-11-13T20:53:56"
+      "elapsed_s": 36.2,
+      "finished_at": "2026-11-13T23:42:53"
     },
     "advanced": {
       "title": "Phân tích mở rộng",
       "status": "ok",
-      "elapsed_s": 190.3,
-      "finished_at": "2026-11-13T20:57:07"
+      "elapsed_s": 116.0,
+      "finished_at": "2026-11-13T23:44:49"
     },
     "verify": {
       "title": "Kiểm chứng độc lập",
       "status": "ok",
-      "elapsed_s": 4.7,
-      "finished_at": "2026-11-13T20:57:11"
+      "elapsed_s": 2.9,
+      "finished_at": "2026-11-13T23:44:52"
     },
     "benchmark": {
       "title": "Đo hiệu năng (Mức B)",
       "status": "ok",
-      "elapsed_s": 196.2,
-      "finished_at": "2026-11-13T21:00:27"
+      "elapsed_s": 180.5,
+      "finished_at": "2026-11-13T23:47:52"
     },
     "figures": {
       "title": "Vẽ biểu đồ",
       "status": "ok",
-      "elapsed_s": 34.5,
-      "finished_at": "2026-11-13T21:01:02"
+      "elapsed_s": 21.1,
+      "finished_at": "2026-11-13T23:38:41"
     },
     "report": {
       "title": "Tạo báo cáo Checkpoint 3",
       "status": "ok",
       "elapsed_s": 0.1,
-      "finished_at": "2026-11-13T21:02:57"
+      "finished_at": "2026-11-13T23:38:41"
     }
   }
 }
