@@ -45,14 +45,14 @@
     "figures": {
       "title": "Vẽ biểu đồ",
       "status": "ok",
-      "elapsed_s": 21.1,
-      "finished_at": "2026-11-13T23:38:41"
+      "elapsed_s": 13.4,
+      "finished_at": "2026-11-13T23:48:06"
     },
     "report": {
       "title": "Tạo báo cáo Checkpoint 3",
       "status": "ok",
       "elapsed_s": 0.1,
-      "finished_at": "2026-11-13T23:38:41"
+      "finished_at": "2026-11-13T23:48:06"
     }
   }
 }
