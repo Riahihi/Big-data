@@ -1,7 +1,301 @@
 {
   "raw_rows": 2980848,
   "duplicates_removed": 0,
+  "location_dimension_keys": 34,
+  "rows_after_deduplicate": 2980848,
+  "rows_before_grid_join": 2980848,
+  "expected_grid_rows": 2980848,
+  "rows_unmatched_location_dimension": 0,
   "rows_outside_grid": 0,
+  "rows_matched_to_grid": 2980848,
+  "rows_after_dimension_join": 2980848,
+  "grid_join_row_delta": 0,
+  "input_schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "name": "location_id",
+        "type": "string",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "file_year",
+        "type": "integer",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "source_file",
+        "type": "string",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "grid_latitude",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "grid_longitude",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "elevation",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "utc_offset_seconds",
+        "type": "integer",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "temperature_2m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "relative_humidity_2m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "dew_point_2m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "apparent_temperature",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "precipitation",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "rain",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "weather_code",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "cloud_cover",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "wind_speed_10m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "wind_gusts_10m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "ts",
+        "type": "timestamp",
+        "nullable": true,
+        "metadata": {}
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "name": "location_id",
+        "type": "string",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "location_name",
+        "type": "string",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "site_name",
+        "type": "string",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "region",
+        "type": "string",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "is_core",
+        "type": "boolean",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "latitude",
+        "type": "decimal(6,4)",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "longitude",
+        "type": "decimal(7,4)",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "grid_latitude",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "grid_longitude",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "elevation_m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "ts",
+        "type": "timestamp",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "date",
+        "type": "date",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "precip_date",
+        "type": "date",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "year",
+        "type": "integer",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "month",
+        "type": "integer",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "hour",
+        "type": "integer",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "temperature_2m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "relative_humidity_2m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "dew_point_2m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "apparent_temperature",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "precipitation",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "rain",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "weather_code",
+        "type": "integer",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "cloud_cover",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "wind_speed_10m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "wind_gusts_10m",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "is_missing_row",
+        "type": "boolean",
+        "nullable": false,
+        "metadata": {}
+      },
+      {
+        "name": "temp_imputed",
+        "type": "boolean",
+        "nullable": true,
+        "metadata": {}
+      }
+    ]
+  },
   "clean_rows": 2980848,
   "expected_rows": 2980848,
   "missing_rows": 0,
@@ -11,5 +305,5 @@
   "null_precipitation_after_clean": 0,
   "n_locations": 34,
   "parquet_roundtrip_ok": true,
-  "elapsed_s": 87.6
+  "elapsed_s": 231.5
 }

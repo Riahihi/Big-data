@@ -4,11 +4,12 @@
     python run_pipeline.py --skip-ingest          # không tải lại dữ liệu
     python run_pipeline.py --only clean analysis  # chạy vài bước
 
-Các bước: ingest, daily, clean, analysis, advanced, verify, benchmark, figures
+Các bước: ingest, daily, clean, analysis, advanced, verify, benchmark, figures, report
 Thời gian từng bước lưu ở data/results/pipeline_run.json
 """
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
@@ -26,10 +27,16 @@ STEPS = [
     ("verify", "Kiểm chứng độc lập", ["pipeline/verify.py"]),
     ("benchmark", "Đo hiệu năng (Mức B)", ["pipeline/benchmark.py"]),
     ("figures", "Vẽ biểu đồ", ["pipeline/figures.py"]),
+    ("report", "Tạo báo cáo Checkpoint 3", ["pipeline/checkpoint_report.py"]),
 ]
 
 
 def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="backslashreplace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
+
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--skip-ingest", action="store_true", help="không gọi API, dùng dữ liệu gốc đã tải")
     ap.add_argument("--only", nargs="+", choices=[s[0] for s in STEPS], help="chỉ chạy các bước này")
@@ -40,16 +47,18 @@ def main():
     log_path = ROOT / "data" / "results" / "pipeline_run.json"
     log_path.parent.mkdir(parents=True, exist_ok=True)
     # giữ lại log của các bước không chạy lần này
-    log = json.loads(log_path.read_text()) if log_path.exists() else {"steps": {}}
+    log = json.loads(log_path.read_text(encoding="utf-8")) if log_path.exists() else {"steps": {}}
+    child_env = os.environ.copy()
+    child_env["PYTHONUTF8"] = "1"
 
     for key, title, args in selected:
         print(f"\n=== [{key}] {title} ===", flush=True)
         t0 = time.time()
-        proc = subprocess.run([sys.executable, *args], cwd=ROOT)
+        proc = subprocess.run([sys.executable, *args], cwd=ROOT, env=child_env)
         elapsed = round(time.time() - t0, 1)
         log["steps"][key] = {"title": title, "status": "ok" if proc.returncode == 0 else "failed",
                              "elapsed_s": elapsed, "finished_at": datetime.now().isoformat(timespec="seconds")}
-        log_path.write_text(json.dumps(log, indent=2, ensure_ascii=False))
+        log_path.write_text(json.dumps(log, indent=2, ensure_ascii=False), encoding="utf-8")
         if proc.returncode != 0:
             print(f"Bước {key} thất bại (mã {proc.returncode}) – dừng pipeline.")
             sys.exit(proc.returncode)

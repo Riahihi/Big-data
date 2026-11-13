@@ -25,7 +25,7 @@ BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,11,22.61,20.55,24.5
 BNH,Bắc Ninh,Bắc Giang,Đồng bằng sông Hồng,False,12,18.5,16.67,20.42,10
 CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,1,16.18,14.56,17.79,10
 CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,2,17.09,13.42,19.48,10
-CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,3,21.13,19.89,22.28,10
+CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,3,21.14,19.89,22.28,10
 CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,4,24.52,21.36,26.78,10
 CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,5,27.1,24.84,28.48,10
 CBG,Cao Bằng,Cao Bằng,Đông Bắc,False,6,28.92,28.42,29.45,10
@@ -57,7 +57,7 @@ CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,7,27.67,27.3,28.1
 CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,8,27.76,27.28,28.4,10
 CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,9,27.44,27.06,27.89,10
 CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,10,27.42,26.71,27.9,10
-CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,11,27.39,26.85,28.0,10
+CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,11,27.38,26.85,28.0,10
 CTO,Cần Thơ,Cần Thơ,Đồng bằng sông Cửu Long,True,12,26.57,25.96,27.56,10
 DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,1,18.62,16.81,20.95,10
 DBN,Điện Biên,Điện Biên Phủ,Tây Bắc,True,2,20.33,17.54,22.93,10
@@ -94,7 +94,7 @@ DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,8,30.24,29.25,30.99,10
 DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,9,28.81,28.08,29.61,10
 DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,10,26.95,26.26,27.63,10
 DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,11,25.51,24.67,26.06,10
-DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,12,23.3,22.71,24.54,10
+DNG,Đà Nẵng,Đà Nẵng,Nam Trung Bộ,True,12,23.29,22.71,24.54,10
 DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,1,27.36,26.28,28.47,10
 DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,2,27.92,26.52,28.97,10
 DNI,Đồng Nai,Biên Hòa,Đông Nam Bộ,False,3,28.87,27.51,29.77,10
@@ -214,11 +214,11 @@ KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,8,30.02,28.79,30.85,10
 KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,9,28.99,28.05,29.56,10
 KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,10,27.82,26.98,28.2,10
 KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,11,26.76,26.17,27.5,10
-KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,12,25.27,24.47,26.63,10
+KHA,Khánh Hòa,Nha Trang,Nam Trung Bộ,True,12,25.26,24.47,26.63,10
 LCI,Lào Cai,Yên Bái,Tây Bắc,False,1,17.63,15.7,19.13,10
 LCI,Lào Cai,Yên Bái,Tây Bắc,False,2,18.48,15.35,21.28,10
 LCI,Lào Cai,Yên Bái,Tây Bắc,False,3,22.05,20.63,22.77,10
-LCI,Lào Cai,Yên Bái,Tây Bắc,False,4,25.31,22.31,27.78,10
+LCI,Lào Cai,Yên Bái,Tây Bắc,False,4,25.32,22.31,27.78,10
 LCI,Lào Cai,Yên Bái,Tây Bắc,False,5,27.97,26.17,29.34,10
 LCI,Lào Cai,Yên Bái,Tây Bắc,False,6,29.79,29.07,30.43,10
 LCI,Lào Cai,Yên Bái,Tây Bắc,False,7,29.72,28.66,30.37,10
@@ -319,7 +319,7 @@ QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,5,27.95,26.25,29.05,10
 QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,6,29.95,29.5,30.94,10
 QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,7,29.68,28.64,30.63,10
 QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,8,29.04,28.45,29.76,10
-QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,9,28.55,28.32,28.88,10
+QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,9,28.56,28.32,28.88,10
 QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,10,25.97,24.48,27.22,10
 QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,11,23.21,21.44,25.08,10
 QNH,Quảng Ninh,Hạ Long,Đông Bắc,True,12,19.19,17.24,20.9,10
@@ -351,7 +351,7 @@ THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,1,18.55,16.48,20.39,10
 THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,2,19.31,16.26,22.66,10
 THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,3,22.4,20.36,23.73,10
 THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,4,25.78,22.85,29.15,10
-THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,5,29.04,27.48,30.26,10
+THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,5,29.03,27.48,30.26,10
 THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,6,31.38,30.54,32.49,10
 THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,7,30.55,29.13,32.22,10
 THA,Thanh Hóa,Thanh Hóa,Bắc Trung Bộ,False,8,29.74,29.03,31.21,10

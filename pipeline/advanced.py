@@ -195,7 +195,9 @@ def diurnal_cycle(hourly: DataFrame) -> DataFrame:
 # A7. Chu kỳ lặp lại (Gumbel)
 def gumbel_return_levels(ci: DataFrame, spark) -> DataFrame:
     """Gumbel theo phương pháp mô-men: x_T = u - a*ln(-ln(1 - 1/T)), a = s*sqrt(6)/pi, u = mean - 0.5772*a"""
-    periods = spark.createDataFrame([(t,) for t in (2, 5, 10, 25, 50, 100)], "return_period_years int")
+    periods = spark.sql(
+        "SELECT * FROM VALUES (2), (5), (10), (25), (50), (100) AS periods(return_period_years)"
+    )
     m = ci.groupBy(*LOC_COLS).agg(F.avg("Rx1day").alias("mu"), F.stddev_samp("Rx1day").alias("s"),
                                   F.max("Rx1day").alias("observed_max_mm"), F.count("*").alias("n_years"))
     alpha = F.col("s") * math.sqrt(6) / math.pi
@@ -227,6 +229,7 @@ def climate_clusters(q1_clim: DataFrame, q2: DataFrame, daily: DataFrame):
     from pyspark.ml.clustering import KMeans
     from pyspark.ml.evaluation import ClusteringEvaluator
     from pyspark.ml.feature import PCA, StandardScaler, VectorAssembler
+    from pyspark.ml.functions import vector_to_array
 
     # đặc trưng: 12 tháng nhiệt độ, 12 tháng tỷ lệ mưa, log tổng mưa, biên độ nhiệt
     temp_w = q1_clim.groupBy("location_id").pivot("month", list(range(1, 13))).agg(F.first("clim_temp_c"))
@@ -256,7 +259,7 @@ def climate_clusters(q1_clim: DataFrame, q2: DataFrame, daily: DataFrame):
     best_k = max(scores, key=lambda s: s["silhouette"])["k"]
     best = KMeans(k=best_k, seed=42, featuresCol="features", maxIter=100).fit(X)
     pca = PCA(k=2, inputCol="features", outputCol="pc").fit(X)
-    out = pca.transform(best.transform(X)).withColumn("pc_arr", F.udf(lambda v: v.toArray().tolist(), "array<double>")("pc"))
+    out = pca.transform(best.transform(X)).withColumn("pc_arr", vector_to_array("pc"))
     result = out.select("location_id", F.col("prediction").alias("cluster"),
                         F.round(F.col("pc_arr")[0], 3).alias("pc1"), F.round(F.col("pc_arr")[1], 3).alias("pc2"),
                         F.round("annual_p", 0).alias("annual_precip_mm"), F.round("mean_dtr", 2).alias("mean_dtr"),

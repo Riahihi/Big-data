@@ -1,53 +1,45 @@
 {
   "environment": {
-    "cpu": "x86_64",
-    "logical_cores_machine": 80,
-    "load_average_1m_5m_15m": [
-      24.0,
-      21.1,
-      20.2
-    ],
+    "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "logical_cores_machine": 12,
+    "load_average_1m_5m_15m": null,
     "spark_version": "4.0.1",
     "spark_master": "local[8]",
-    "python": "3.12.5",
+    "python": "3.12.16",
     "note": "Máy chủ dùng chung nhiều người; số liệu chỉ có giá trị so sánh tương đối trong cùng lần chạy.",
-    "load_average_end": [
-      19.3,
-      20.5,
-      20.1
-    ]
+    "load_average_end": null
   },
   "n_rows": 2980848,
   "B1_storage_bytes": {
     "raw_json_uncompressed": 183906129,
     "raw_json_gzip": 32337977,
-    "csv_uncompressed": 610599819,
-    "parquet_snappy_partitioned": 48140783,
-    "parquet_snappy_flat": 37017453
+    "csv_uncompressed": 614575886,
+    "parquet_snappy_partitioned": 48112411,
+    "parquet_snappy_flat": 37000086
   },
   "B1_storage_MB": {
     "raw_json_uncompressed": 183.9,
     "raw_json_gzip": 32.3,
-    "csv_uncompressed": 610.6,
+    "csv_uncompressed": 614.6,
     "parquet_snappy_partitioned": 48.1,
     "parquet_snappy_flat": 37.0
   },
-  "B1_csv_over_parquet_ratio": 16.49,
+  "B1_csv_over_parquet_ratio": 16.61,
   "B2_q1_seconds": {
     "csv": [
-      2.468,
+      6.851,
       [
-        2.959,
-        2.468,
-        2.216
+        7.851,
+        6.851,
+        5.635
       ]
     ],
     "parquet": [
-      0.355,
+      0.953,
       [
-        0.371,
-        0.354,
-        0.355
+        1.084,
+        0.848,
+        0.953
       ]
     ]
   },
@@ -55,25 +47,25 @@
     "query": "location_id = 'HNI' AND year = 2024",
     "partitioned": {
       "seconds": [
-        0.439,
+        0.812,
         [
-          0.526,
-          0.396,
-          0.439
+          1.027,
+          0.812,
+          0.714
         ]
       ],
       "files_read": 1,
       "files_total": 340,
       "mb_in_files_read": 0.14,
-      "mb_total": 48.14
+      "mb_total": 48.11
     },
     "unpartitioned_shuffled": {
       "seconds": [
-        0.303,
+        0.589,
         [
-          0.378,
-          0.257,
-          0.303
+          0.656,
+          0.589,
+          0.433
         ]
       ],
       "files_read": 16,
@@ -83,83 +75,83 @@
     },
     "unpartitioned_sorted": {
       "seconds": [
-        0.24,
+        0.406,
         [
-          0.24,
-          0.254,
-          0.221
+          0.394,
+          0.452,
+          0.406
         ]
       ],
       "files_read": 1,
       "files_total": 11,
       "mb_in_files_read": 3.57,
-      "mb_total": 37.02
+      "mb_total": 37.0
     }
   },
   "B4_thread_scaling_daily_agg": {
     "1": {
       "seconds": [
-        3.831,
+        8.604,
         [
-          4.994,
-          3.831,
-          3.73
+          10.835,
+          8.604,
+          8.009
         ]
       ],
       "speedup_vs_1": 1.0
     },
     "2": {
       "seconds": [
-        2.591,
+        4.859,
         [
-          3.126,
-          2.591,
-          2.563
+          5.24,
+          4.859,
+          4.398
         ]
       ],
-      "speedup_vs_1": 1.48
+      "speedup_vs_1": 1.77
     },
     "4": {
       "seconds": [
-        1.805,
+        4.119,
         [
-          2.065,
-          1.625,
-          1.805
+          4.603,
+          4.119,
+          3.793
         ]
       ],
-      "speedup_vs_1": 2.12
+      "speedup_vs_1": 2.09
     },
     "8": {
       "seconds": [
-        1.521,
+        3.964,
         [
-          1.75,
-          1.465,
-          1.521
+          4.741,
+          3.872,
+          3.964
         ]
       ],
-      "speedup_vs_1": 2.52
+      "speedup_vs_1": 2.17
     }
   },
   "B5_daily_agg_seconds": {
     "pandas_single_process": [
-      0.805,
+      1.955,
       [
-        0.925,
-        0.667,
-        0.805
+        1.955,
+        2.596,
+        1.809
       ]
     ],
     "spark_local8": [
-      0.475,
+      0.988,
       [
-        0.53,
-        0.467,
-        0.475
+        1.095,
+        0.891,
+        0.988
       ]
     ],
-    "ratio_pandas_over_spark": 1.69,
-    "note": "Spark nhanh hơn pandas khoảng 1,7 lần (chưa tính thời gian khởi động Spark, khoảng 5-10 s)."
+    "ratio_pandas_over_spark": 1.98,
+    "note": "Spark nhanh hơn pandas khoảng 2,0 lần (chưa tính thời gian khởi động Spark, khoảng 5-10 s)."
   }
 }

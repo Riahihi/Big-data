@@ -18,6 +18,7 @@ import statistics
 import sys
 import time
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -25,10 +26,10 @@ if __package__ in (None, ""):
 from pyspark.sql import functions as F
 
 from pipeline import config as C
-from pipeline.spark_utils import get_spark
+from pipeline.spark_utils import get_spark, local_work_dir
 
 REPEAT = 3
-TMP = Path("/dev/shm") / f"{os.environ.get('USER', 'user')}_weather_bench"  # thư mục tạm riêng của benchmark
+TMP = local_work_dir("weather_bench")
 
 
 def dir_size(p: Path) -> int:
@@ -53,12 +54,30 @@ def environment(spark):
     return {
         "cpu": platform.processor() or platform.machine(),
         "logical_cores_machine": os.cpu_count(),
-        "load_average_1m_5m_15m": [round(x, 1) for x in os.getloadavg()],
+        "load_average_1m_5m_15m": load_average(),
         "spark_version": spark.version,
         "spark_master": spark.sparkContext.master,
         "python": platform.python_version(),
         "note": "Máy chủ dùng chung nhiều người; số liệu chỉ có giá trị so sánh tương đối trong cùng lần chạy.",
     }
+
+
+def local_file_path(uri):
+    """Convert Spark's file URI to a native path on this platform."""
+    if len(uri) >= 3 and uri[1] == ":" and uri[2] in ("\\", "/"):
+        return Path(uri)
+    parsed = urlparse(uri)
+    if parsed.scheme != "file":
+        raise ValueError(f"Expected a local file URI, got {uri!r}")
+    path = unquote(parsed.path)
+    if os.name == "nt" and len(path) >= 3 and path[0] == "/" and path[2] == ":":
+        path = path[1:]
+    return Path(path)
+
+
+def load_average():
+    getloadavg = getattr(os, "getloadavg", None)
+    return [round(x, 1) for x in getloadavg()] if getloadavg is not None else None
 
 
 def main():
@@ -110,7 +129,7 @@ def main():
         """Đếm số file có dữ liệu thỏa điều kiện (là số file spark phải đọc)"""
         d = spark.read.parquet(str(path)).filter((F.col("location_id") == "HNI") & (F.col("year") == 2024))
         files = [r[0] for r in d.select(F.input_file_name()).distinct().collect()]
-        size = sum(Path(f.replace("file://", "")).stat().st_size for f in files)
+        size = sum(local_file_path(f).stat().st_size for f in files)
         return len(files), size
 
     # thêm 1 bản không phân vùng và bị xáo trộn, dữ liệu 1 địa điểm nằm rải ở mọi file
@@ -161,7 +180,7 @@ def main():
     }
     s.stop()
 
-    res["environment"]["load_average_end"] = [round(x, 1) for x in os.getloadavg()]
+    res["environment"]["load_average_end"] = load_average()
     shutil.rmtree(TMP)  # chỉ xóa thư mục tạm do chính script tạo
     (C.RESULTS_DIR / "benchmark.json").write_text(json.dumps(res, indent=2, ensure_ascii=False))
     print(json.dumps(res, indent=2, ensure_ascii=False))

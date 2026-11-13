@@ -1,0 +1,511 @@
+== Physical Plan ==
+AdaptiveSparkPlan (96)
++- Project (95)
+   +- BroadcastHashJoin LeftOuter BuildRight (94)
+      :- Project (79)
+      :  +- BroadcastHashJoin Inner BuildRight (78)
+      :     :- Project (75)
+      :     :  +- Window (74)
+      :     :     +- Project (73)
+      :     :        +- Window (72)
+      :     :           +- Sort (71)
+      :     :              +- Project (70)
+      :     :                 +- Window (69)
+      :     :                    +- Project (68)
+      :     :                       +- Window (67)
+      :     :                          +- Sort (66)
+      :     :                             +- Project (65)
+      :     :                                +- Window (64)
+      :     :                                   +- Project (63)
+      :     :                                      +- Window (62)
+      :     :                                         +- Sort (61)
+      :     :                                            +- Project (60)
+      :     :                                               +- Window (59)
+      :     :                                                  +- Project (58)
+      :     :                                                     +- Window (57)
+      :     :                                                        +- Sort (56)
+      :     :                                                           +- Project (55)
+      :     :                                                              +- Window (54)
+      :     :                                                                 +- Project (53)
+      :     :                                                                    +- Window (52)
+      :     :                                                                       +- Sort (51)
+      :     :                                                                          +- Project (50)
+      :     :                                                                             +- Window (49)
+      :     :                                                                                +- Project (48)
+      :     :                                                                                   +- Window (47)
+      :     :                                                                                      +- Sort (46)
+      :     :                                                                                         +- Project (45)
+      :     :                                                                                            +- Window (44)
+      :     :                                                                                               +- Project (43)
+      :     :                                                                                                  +- Window (42)
+      :     :                                                                                                     +- Sort (41)
+      :     :                                                                                                        +- Project (40)
+      :     :                                                                                                           +- Window (39)
+      :     :                                                                                                              +- Project (38)
+      :     :                                                                                                                 +- Window (37)
+      :     :                                                                                                                    +- Sort (36)
+      :     :                                                                                                                       +- Exchange (35)
+      :     :                                                                                                                          +- Project (34)
+      :     :                                                                                                                             +- SortMergeJoin LeftOuter (33)
+      :     :                                                                                                                                :- Sort (21)
+      :     :                                                                                                                                :  +- Exchange (20)
+      :     :                                                                                                                                :     +- Generate (19)
+      :     :                                                                                                                                :        +- HashAggregate (18)
+      :     :                                                                                                                                :           +- Exchange (17)
+      :     :                                                                                                                                :              +- HashAggregate (16)
+      :     :                                                                                                                                :                 +- Project (15)
+      :     :                                                                                                                                :                    +- Filter (14)
+      :     :                                                                                                                                :                       +- Window (13)
+      :     :                                                                                                                                :                          +- WindowGroupLimit (12)
+      :     :                                                                                                                                :                             +- Sort (11)
+      :     :                                                                                                                                :                                +- Exchange (10)
+      :     :                                                                                                                                :                                   +- WindowGroupLimit (9)
+      :     :                                                                                                                                :                                      +- Sort (8)
+      :     :                                                                                                                                :                                         +- InMemoryTableScan (1)
+      :     :                                                                                                                                :                                               +- InMemoryRelation (2)
+      :     :                                                                                                                                :                                                     +- * Project (7)
+      :     :                                                                                                                                :                                                        +- * Generate (6)
+      :     :                                                                                                                                :                                                           +- * Project (5)
+      :     :                                                                                                                                :                                                              +- * Project (4)
+      :     :                                                                                                                                :                                                                 +- Scan json  (3)
+      :     :                                                                                                                                +- Project (32)
+      :     :                                                                                                                                   +- Filter (31)
+      :     :                                                                                                                                      +- Window (30)
+      :     :                                                                                                                                         +- WindowGroupLimit (29)
+      :     :                                                                                                                                            +- Sort (28)
+      :     :                                                                                                                                               +- Exchange (27)
+      :     :                                                                                                                                                  +- WindowGroupLimit (26)
+      :     :                                                                                                                                                     +- Sort (25)
+      :     :                                                                                                                                                        +- Filter (24)
+      :     :                                                                                                                                                           +- InMemoryTableScan (22)
+      :     :                                                                                                                                                                 +- InMemoryRelation (23)
+      :     :                                                                                                                                                                       +- * Project (7)
+      :     :                                                                                                                                                                          +- * Generate (6)
+      :     :                                                                                                                                                                             +- * Project (5)
+      :     :                                                                                                                                                                                +- * Project (4)
+      :     :                                                                                                                                                                                   +- Scan json  (3)
+      :     +- BroadcastExchange (77)
+      :        +- LocalTableScan (76)
+      +- BroadcastExchange (93)
+         +- HashAggregate (92)
+            +- Exchange (91)
+               +- HashAggregate (90)
+                  +- Project (89)
+                     +- Filter (88)
+                        +- Window (87)
+                           +- WindowGroupLimit (86)
+                              +- Sort (85)
+                                 +- Exchange (84)
+                                    +- WindowGroupLimit (83)
+                                       +- Sort (82)
+                                          +- InMemoryTableScan (80)
+                                                +- InMemoryRelation (81)
+                                                      +- * Project (7)
+                                                         +- * Generate (6)
+                                                            +- * Project (5)
+                                                               +- * Project (4)
+                                                                  +- Scan json  (3)
+
+
+(1) InMemoryTableScan
+Output [4]: [location_id#8, file_year#9, source_file#7, ts#47]
+Arguments: [location_id#8, file_year#9, source_file#7, ts#47]
+
+(2) InMemoryRelation
+Arguments: [location_id#8, file_year#9, source_file#7, grid_latitude#10, grid_longitude#11, elevation#2, utc_offset_seconds#3, temperature_2m#48, relative_humidity_2m#49, dew_point_2m#50, apparent_temperature#51, precipitation#52, rain#53, weather_code#54, cloud_cover#55, wind_speed_10m#56, wind_gusts_10m#57, ts#47], StorageLevel(disk, memory, deserialized, 1 replicas)
+
+(3) Scan json 
+Output [5]: [latitude#0, longitude#1, elevation#2, utc_offset_seconds#3, hourly#5]
+Batched: false
+Location: InMemoryFileIndex [file:/C:/Bigdata2/data/raw/AGG/AGG_2016.json.gz, ... 339 entries]
+ReadSchema: struct<latitude:double,longitude:double,elevation:double,utc_offset_seconds:int,hourly:struct<time:array<string>,temperature_2m:array<double>,relative_humidity_2m:array<double>,dew_point_2m:array<double>,apparent_temperature:array<double>,precipitation:array<double>,rain:array<double>,weather_code:array<double>,cloud_cover:array<double>,wind_speed_10m:array<double>,wind_gusts_10m:array<double>>>
+
+(4) Project [codegen id : 1]
+Output [6]: [latitude#0, longitude#1, elevation#2, utc_offset_seconds#3, hourly#5, input_file_name() AS source_file#7]
+Input [5]: [latitude#0, longitude#1, elevation#2, utc_offset_seconds#3, hourly#5]
+
+(5) Project [codegen id : 1]
+Output [18]: [regexp_extract(source_file#7, /([A-Z]{3})_(\d{4})\.json\.gz$, 1) AS location_id#8, cast(regexp_extract(source_file#7, _(\d{4})\.json\.gz$, 1) as int) AS file_year#9, source_file#7, elevation#2, utc_offset_seconds#3, latitude#0 AS grid_latitude#10, longitude#1 AS grid_longitude#11, hourly#5.time AS time_str#12, hourly#5.temperature_2m AS temperature_2m#13, hourly#5.relative_humidity_2m AS relative_humidity_2m#14, hourly#5.dew_point_2m AS dew_point_2m#15, hourly#5.apparent_temperature AS apparent_temperature#16, hourly#5.precipitation AS precipitation#17, hourly#5.rain AS rain#18, hourly#5.weather_code AS weather_code#19, hourly#5.cloud_cover AS cloud_cover#20, hourly#5.wind_speed_10m AS wind_speed_10m#21, hourly#5.wind_gusts_10m AS wind_gusts_10m#22]
+Input [6]: [latitude#0, longitude#1, elevation#2, utc_offset_seconds#3, hourly#5, source_file#7]
+
+(6) Generate [codegen id : 1]
+Input [18]: [location_id#8, file_year#9, source_file#7, elevation#2, utc_offset_seconds#3, grid_latitude#10, grid_longitude#11, time_str#12, temperature_2m#13, relative_humidity_2m#14, dew_point_2m#15, apparent_temperature#16, precipitation#17, rain#18, weather_code#19, cloud_cover#20, wind_speed_10m#21, wind_gusts_10m#22]
+Arguments: explode(arrays_zip(time_str#12, temperature_2m#13, relative_humidity_2m#14, dew_point_2m#15, apparent_temperature#16, precipitation#17, rain#18, weather_code#19, cloud_cover#20, wind_speed_10m#21, wind_gusts_10m#22, time_str, temperature_2m, relative_humidity_2m, dew_point_2m, apparent_temperature, precipitation, rain, weather_code, cloud_cover, wind_speed_10m, wind_gusts_10m)), [location_id#8, file_year#9, source_file#7, elevation#2, utc_offset_seconds#3, grid_latitude#10, grid_longitude#11], false, [r#35]
+
+(7) Project [codegen id : 1]
+Output [18]: [location_id#8, file_year#9, source_file#7, grid_latitude#10, grid_longitude#11, elevation#2, utc_offset_seconds#3, r#35.temperature_2m AS temperature_2m#48, r#35.relative_humidity_2m AS relative_humidity_2m#49, r#35.dew_point_2m AS dew_point_2m#50, r#35.apparent_temperature AS apparent_temperature#51, r#35.precipitation AS precipitation#52, r#35.rain AS rain#53, r#35.weather_code AS weather_code#54, r#35.cloud_cover AS cloud_cover#55, r#35.wind_speed_10m AS wind_speed_10m#56, r#35.wind_gusts_10m AS wind_gusts_10m#57, gettimestamp(r#35.time_str, yyyy-MM-dd'T'HH:mm, TimestampType, try_to_timestamp, Some(Asia/Ho_Chi_Minh), true) AS ts#47]
+Input [8]: [location_id#8, file_year#9, source_file#7, elevation#2, utc_offset_seconds#3, grid_latitude#10, grid_longitude#11, r#35]
+
+(8) Sort
+Input [4]: [location_id#8, file_year#9, source_file#7, ts#47]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#47 ASC NULLS FIRST, source_file#7 DESC NULLS LAST], false, 0
+
+(9) WindowGroupLimit
+Input [4]: [location_id#8, file_year#9, source_file#7, ts#47]
+Arguments: [location_id#8, ts#47], [source_file#7 DESC NULLS LAST], row_number(), 1, Partial
+
+(10) Exchange
+Input [4]: [location_id#8, file_year#9, source_file#7, ts#47]
+Arguments: hashpartitioning(location_id#8, ts#47, 32), ENSURE_REQUIREMENTS, [plan_id=4237]
+
+(11) Sort
+Input [4]: [location_id#8, file_year#9, source_file#7, ts#47]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#47 ASC NULLS FIRST, source_file#7 DESC NULLS LAST], false, 0
+
+(12) WindowGroupLimit
+Input [4]: [location_id#8, file_year#9, source_file#7, ts#47]
+Arguments: [location_id#8, ts#47], [source_file#7 DESC NULLS LAST], row_number(), 1, Final
+
+(13) Window
+Input [4]: [location_id#8, file_year#9, source_file#7, ts#47]
+Arguments: [row_number() windowspecdefinition(location_id#8, ts#47, source_file#7 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _rn#625], [location_id#8, ts#47], [source_file#7 DESC NULLS LAST]
+
+(14) Filter
+Input [5]: [location_id#8, file_year#9, source_file#7, ts#47, _rn#625]
+Condition : (_rn#625 = 1)
+
+(15) Project
+Output [2]: [location_id#8, file_year#9 AS year#1124]
+Input [5]: [location_id#8, file_year#9, source_file#7, ts#47, _rn#625]
+
+(16) HashAggregate
+Input [2]: [location_id#8, year#1124]
+Keys [2]: [location_id#8, year#1124]
+Functions: []
+Aggregate Attributes: []
+Results [2]: [location_id#8, year#1124]
+
+(17) Exchange
+Input [2]: [location_id#8, year#1124]
+Arguments: hashpartitioning(location_id#8, year#1124, 32), ENSURE_REQUIREMENTS, [plan_id=4245]
+
+(18) HashAggregate
+Input [2]: [location_id#8, year#1124]
+Keys [2]: [location_id#8, year#1124]
+Functions: []
+Aggregate Attributes: []
+Results [2]: [location_id#8, year#1124]
+
+(19) Generate
+Input [2]: [location_id#8, year#1124]
+Arguments: explode(sequence(gettimestamp(format_string(%d-01-01 00:00, year#1124), yyyy-MM-dd HH:mm, TimestampType, try_to_timestamp, Some(Asia/Ho_Chi_Minh), true), gettimestamp(format_string(%d-12-31 23:00, year#1124), yyyy-MM-dd HH:mm, TimestampType, try_to_timestamp, Some(Asia/Ho_Chi_Minh), true), Some(INTERVAL '01' HOUR), Some(Asia/Ho_Chi_Minh))), [location_id#8], false, [ts#1576]
+
+(20) Exchange
+Input [2]: [location_id#8, ts#1576]
+Arguments: hashpartitioning(location_id#8, ts#1576, 32), ENSURE_REQUIREMENTS, [plan_id=4259]
+
+(21) Sort
+Input [2]: [location_id#8, ts#1576]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 ASC NULLS FIRST], false, 0
+
+(22) InMemoryTableScan
+Output [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Arguments: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611], [isnotnull(ts#1611)]
+
+(23) InMemoryRelation
+Arguments: [location_id#1584, file_year#1585, source_file#1583, grid_latitude#1586, grid_longitude#1587, elevation#1579, utc_offset_seconds#1580, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611], StorageLevel(disk, memory, deserialized, 1 replicas)
+
+(24) Filter
+Input [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Condition : isnotnull(ts#1611)
+
+(25) Sort
+Input [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Arguments: [location_id#1584 ASC NULLS FIRST, ts#1611 ASC NULLS FIRST, source_file#1583 DESC NULLS LAST], false, 0
+
+(26) WindowGroupLimit
+Input [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Arguments: [location_id#1584, ts#1611], [source_file#1583 DESC NULLS LAST], row_number(), 1, Partial
+
+(27) Exchange
+Input [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Arguments: hashpartitioning(location_id#1584, ts#1611, 32), ENSURE_REQUIREMENTS, [plan_id=4251]
+
+(28) Sort
+Input [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Arguments: [location_id#1584 ASC NULLS FIRST, ts#1611 ASC NULLS FIRST, source_file#1583 DESC NULLS LAST], false, 0
+
+(29) WindowGroupLimit
+Input [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Arguments: [location_id#1584, ts#1611], [source_file#1583 DESC NULLS LAST], row_number(), 1, Final
+
+(30) Window
+Input [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Arguments: [row_number() windowspecdefinition(location_id#1584, ts#1611, source_file#1583 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _rn#1622], [location_id#1584, ts#1611], [source_file#1583 DESC NULLS LAST]
+
+(31) Filter
+Input [14]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611, _rn#1622]
+Condition : (_rn#1622 = 1)
+
+(32) Project
+Output [13]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+Input [14]: [location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611, _rn#1622]
+
+(33) SortMergeJoin
+Left keys [2]: [location_id#8, ts#1576]
+Right keys [2]: [location_id#1584, ts#1611]
+Join type: LeftOuter
+Join condition: None
+
+(34) Project
+Output [13]: [location_id#8, ts#1576, CASE WHEN (isnotnull(temperature_2m#1612) AND ((temperature_2m#1612 < -15.0) OR (temperature_2m#1612 > 50.0))) THEN null ELSE temperature_2m#1612 END AS temperature_2m#2098, CASE WHEN (isnotnull(relative_humidity_2m#1613) AND ((relative_humidity_2m#1613 < 0.0) OR (relative_humidity_2m#1613 > 100.0))) THEN null ELSE relative_humidity_2m#1613 END AS relative_humidity_2m#2104, CASE WHEN (isnotnull(dew_point_2m#1614) AND ((dew_point_2m#1614 < -30.0) OR (dew_point_2m#1614 > 40.0))) THEN null ELSE dew_point_2m#1614 END AS dew_point_2m#2100, CASE WHEN (isnotnull(apparent_temperature#1615) AND ((apparent_temperature#1615 < -25.0) OR (apparent_temperature#1615 > 65.0))) THEN null ELSE apparent_temperature#1615 END AS apparent_temperature#2102, CASE WHEN (isnotnull(precipitation#1616) AND ((precipitation#1616 < 0.0) OR (precipitation#1616 > 500.0))) THEN null ELSE precipitation#1616 END AS precipitation#2106, CASE WHEN (isnotnull(rain#1617) AND ((rain#1617 < 0.0) OR (rain#1617 > 500.0))) THEN null ELSE rain#1617 END AS rain#2108, CASE WHEN (isnotnull(weather_code#1618) AND ((weather_code#1618 < 0.0) OR (weather_code#1618 > 99.0))) THEN null ELSE weather_code#1618 END AS weather_code#2116, CASE WHEN (isnotnull(cloud_cover#1619) AND ((cloud_cover#1619 < 0.0) OR (cloud_cover#1619 > 100.0))) THEN null ELSE cloud_cover#1619 END AS cloud_cover#2110, CASE WHEN (isnotnull(wind_speed_10m#1620) AND ((wind_speed_10m#1620 < 0.0) OR (wind_speed_10m#1620 > 300.0))) THEN null ELSE wind_speed_10m#1620 END AS wind_speed_10m#2112, CASE WHEN (isnotnull(wind_gusts_10m#1621) AND ((wind_gusts_10m#1621 < 0.0) OR (wind_gusts_10m#1621 > 400.0))) THEN null ELSE wind_gusts_10m#1621 END AS wind_gusts_10m#2114, isnull(source_file#1583) AS is_missing_row#1624]
+Input [15]: [location_id#8, ts#1576, location_id#1584, source_file#1583, temperature_2m#1612, relative_humidity_2m#1613, dew_point_2m#1614, apparent_temperature#1615, precipitation#1616, rain#1617, weather_code#1618, cloud_cover#1619, wind_speed_10m#1620, wind_gusts_10m#1621, ts#1611]
+
+(35) Exchange
+Input [13]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624]
+Arguments: hashpartitioning(location_id#8, 32), ENSURE_REQUIREMENTS, [plan_id=4264]
+
+(36) Sort
+Input [13]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 ASC NULLS FIRST], false, 0
+
+(37) Window
+Input [13]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624]
+Arguments: [last(temperature_2m#2098, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pv#2117], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(38) Project
+Output [15]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, CASE WHEN isnotnull(temperature_2m#2098) THEN cast(ts#1576 as bigint) END AS _w0#2121L]
+Input [14]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117]
+
+(39) Window
+Input [15]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _w0#2121L]
+Arguments: [last(_w0#2121L, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pt#2119L], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(40) Project
+Output [15]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _pt#2119L]
+Input [16]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _w0#2121L, _pt#2119L]
+
+(41) Sort
+Input [15]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _pt#2119L]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 DESC NULLS LAST], false, 0
+
+(42) Window
+Input [15]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _pt#2119L]
+Arguments: [last(temperature_2m#2098, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nv#2122], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(43) Project
+Output [17]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _pt#2119L, _nv#2122, CASE WHEN isnotnull(temperature_2m#2098) THEN cast(ts#1576 as bigint) END AS _w0#2126L]
+Input [16]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _pt#2119L, _nv#2122]
+
+(44) Window
+Input [17]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _pt#2119L, _nv#2122, _w0#2126L]
+Arguments: [last(_w0#2126L, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nt#2124L], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(45) Project
+Output [14]: [location_id#8, ts#1576, CASE WHEN (((isnull(temperature_2m#2098) AND isnotnull(_pt#2119L)) AND isnotnull(_nt#2124L)) AND ((_nt#2124L - _pt#2119L) <= 14400)) THEN round((_pv#2117 + (((_nv#2122 - _pv#2117) * cast((cast(ts#1576 as bigint) - _pt#2119L) as double)) / cast((_nt#2124L - _pt#2119L) as double))), 2) ELSE temperature_2m#2098 END AS temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, (((isnull(temperature_2m#2098) AND isnotnull(_pt#2119L)) AND isnotnull(_nt#2124L)) AND ((_nt#2124L - _pt#2119L) <= 14400)) AS _imp_temperature_2m#2127]
+Input [18]: [location_id#8, ts#1576, temperature_2m#2098, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _pv#2117, _pt#2119L, _nv#2122, _w0#2126L, _nt#2124L]
+
+(46) Sort
+Input [14]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 ASC NULLS FIRST], false, 0
+
+(47) Window
+Input [14]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127]
+Arguments: [last(relative_humidity_2m#2104, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pv#2129], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(48) Project
+Output [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, CASE WHEN isnotnull(relative_humidity_2m#2104) THEN cast(ts#1576 as bigint) END AS _w0#2133L]
+Input [15]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129]
+
+(49) Window
+Input [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _w0#2133L]
+Arguments: [last(_w0#2133L, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pt#2131L], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(50) Project
+Output [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _pt#2131L]
+Input [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _w0#2133L, _pt#2131L]
+
+(51) Sort
+Input [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _pt#2131L]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 DESC NULLS LAST], false, 0
+
+(52) Window
+Input [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _pt#2131L]
+Arguments: [last(relative_humidity_2m#2104, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nv#2134], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(53) Project
+Output [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _pt#2131L, _nv#2134, CASE WHEN isnotnull(relative_humidity_2m#2104) THEN cast(ts#1576 as bigint) END AS _w0#2138L]
+Input [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _pt#2131L, _nv#2134]
+
+(54) Window
+Input [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _pt#2131L, _nv#2134, _w0#2138L]
+Arguments: [last(_w0#2138L, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nt#2136L], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(55) Project
+Output [15]: [location_id#8, ts#1576, temperature_2m#2128, CASE WHEN (((isnull(relative_humidity_2m#2104) AND isnotnull(_pt#2131L)) AND isnotnull(_nt#2136L)) AND ((_nt#2136L - _pt#2131L) <= 14400)) THEN round((_pv#2129 + (((_nv#2134 - _pv#2129) * cast((cast(ts#1576 as bigint) - _pt#2131L) as double)) / cast((_nt#2136L - _pt#2131L) as double))), 2) ELSE relative_humidity_2m#2104 END AS relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, (((isnull(relative_humidity_2m#2104) AND isnotnull(_pt#2131L)) AND isnotnull(_nt#2136L)) AND ((_nt#2136L - _pt#2131L) <= 14400)) AS _imp_relative_humidity_2m#2139]
+Input [19]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2104, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _pv#2129, _pt#2131L, _nv#2134, _w0#2138L, _nt#2136L]
+
+(56) Sort
+Input [15]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 ASC NULLS FIRST], false, 0
+
+(57) Window
+Input [15]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139]
+Arguments: [last(dew_point_2m#2100, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pv#2141], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(58) Project
+Output [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, CASE WHEN isnotnull(dew_point_2m#2100) THEN cast(ts#1576 as bigint) END AS _w0#2145L]
+Input [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141]
+
+(59) Window
+Input [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _w0#2145L]
+Arguments: [last(_w0#2145L, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pt#2143L], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(60) Project
+Output [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _pt#2143L]
+Input [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _w0#2145L, _pt#2143L]
+
+(61) Sort
+Input [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _pt#2143L]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 DESC NULLS LAST], false, 0
+
+(62) Window
+Input [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _pt#2143L]
+Arguments: [last(dew_point_2m#2100, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nv#2146], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(63) Project
+Output [19]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _pt#2143L, _nv#2146, CASE WHEN isnotnull(dew_point_2m#2100) THEN cast(ts#1576 as bigint) END AS _w0#2150L]
+Input [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _pt#2143L, _nv#2146]
+
+(64) Window
+Input [19]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _pt#2143L, _nv#2146, _w0#2150L]
+Arguments: [last(_w0#2150L, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nt#2148L], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(65) Project
+Output [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, CASE WHEN (((isnull(dew_point_2m#2100) AND isnotnull(_pt#2143L)) AND isnotnull(_nt#2148L)) AND ((_nt#2148L - _pt#2143L) <= 14400)) THEN round((_pv#2141 + (((_nv#2146 - _pv#2141) * cast((cast(ts#1576 as bigint) - _pt#2143L) as double)) / cast((_nt#2148L - _pt#2143L) as double))), 2) ELSE dew_point_2m#2100 END AS dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, (((isnull(dew_point_2m#2100) AND isnotnull(_pt#2143L)) AND isnotnull(_nt#2148L)) AND ((_nt#2148L - _pt#2143L) <= 14400)) AS _imp_dew_point_2m#2151]
+Input [20]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2100, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _pv#2141, _pt#2143L, _nv#2146, _w0#2150L, _nt#2148L]
+
+(66) Sort
+Input [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 ASC NULLS FIRST], false, 0
+
+(67) Window
+Input [16]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151]
+Arguments: [last(apparent_temperature#2102, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pv#2153], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(68) Project
+Output [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, CASE WHEN isnotnull(apparent_temperature#2102) THEN cast(ts#1576 as bigint) END AS _w0#2157L]
+Input [17]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153]
+
+(69) Window
+Input [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _w0#2157L]
+Arguments: [last(_w0#2157L, true) windowspecdefinition(location_id#8, ts#1576 ASC NULLS FIRST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _pt#2155L], [location_id#8], [ts#1576 ASC NULLS FIRST]
+
+(70) Project
+Output [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _pt#2155L]
+Input [19]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _w0#2157L, _pt#2155L]
+
+(71) Sort
+Input [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _pt#2155L]
+Arguments: [location_id#8 ASC NULLS FIRST, ts#1576 DESC NULLS LAST], false, 0
+
+(72) Window
+Input [18]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _pt#2155L]
+Arguments: [last(apparent_temperature#2102, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nv#2158], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(73) Project
+Output [20]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _pt#2155L, _nv#2158, CASE WHEN isnotnull(apparent_temperature#2102) THEN cast(ts#1576 as bigint) END AS _w0#2162L]
+Input [19]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _pt#2155L, _nv#2158]
+
+(74) Window
+Input [20]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _pt#2155L, _nv#2158, _w0#2162L]
+Arguments: [last(_w0#2162L, true) windowspecdefinition(location_id#8, ts#1576 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _nt#2160L], [location_id#8], [ts#1576 DESC NULLS LAST]
+
+(75) Project
+Output [19]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, CASE WHEN (((isnull(apparent_temperature#2102) AND isnotnull(_pt#2155L)) AND isnotnull(_nt#2160L)) AND ((_nt#2160L - _pt#2155L) <= 14400)) THEN round((_pv#2153 + (((_nv#2158 - _pv#2153) * cast((cast(ts#1576 as bigint) - _pt#2155L) as double)) / cast((_nt#2160L - _pt#2155L) as double))), 2) ELSE apparent_temperature#2102 END AS apparent_temperature#2164, precipitation#2106, rain#2108, cast(weather_code#2116 as int) AS weather_code#2166, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, (((_imp_temperature_2m#2127 OR _imp_relative_humidity_2m#2139) OR _imp_dew_point_2m#2151) OR (((isnull(apparent_temperature#2102) AND isnotnull(_pt#2155L)) AND isnotnull(_nt#2160L)) AND ((_nt#2160L - _pt#2155L) <= 14400))) AS temp_imputed#2165, cast(ts#1576 as date) AS date#2167, cast(ts#1576 + INTERVAL '-01' HOUR as date) AS precip_date#2168, year(cast(ts#1576 as date)) AS year#2169, month(cast(ts#1576 as date)) AS month#2170, hour(ts#1576, Some(Asia/Ho_Chi_Minh)) AS hour#2171]
+Input [21]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2102, precipitation#2106, rain#2108, weather_code#2116, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, _imp_temperature_2m#2127, _imp_relative_humidity_2m#2139, _imp_dew_point_2m#2151, _pv#2153, _pt#2155L, _nv#2158, _w0#2162L, _nt#2160L]
+
+(76) LocalTableScan
+Output [7]: [location_id#2172, location_name#2173, site_name#2174, latitude#2175, longitude#2176, region#2177, is_core#2178]
+Arguments: [location_id#2172, location_name#2173, site_name#2174, latitude#2175, longitude#2176, region#2177, is_core#2178]
+
+(77) BroadcastExchange
+Input [7]: [location_id#2172, location_name#2173, site_name#2174, latitude#2175, longitude#2176, region#2177, is_core#2178]
+Arguments: HashedRelationBroadcastMode(List(input[0, string, false]),false), [plan_id=4313]
+
+(78) BroadcastHashJoin
+Left keys [1]: [location_id#8]
+Right keys [1]: [location_id#2172]
+Join type: Inner
+Join condition: None
+
+(79) Project
+Output [25]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2164, precipitation#2106, rain#2108, weather_code#2166, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, temp_imputed#2165, date#2167, precip_date#2168, year#2169, month#2170, hour#2171, location_name#2173, site_name#2174, latitude#2175, longitude#2176, region#2177, is_core#2178]
+Input [26]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2164, precipitation#2106, rain#2108, weather_code#2166, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, temp_imputed#2165, date#2167, precip_date#2168, year#2169, month#2170, hour#2171, location_id#2172, location_name#2173, site_name#2174, latitude#2175, longitude#2176, region#2177, is_core#2178]
+
+(80) InMemoryTableScan
+Output [6]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+Arguments: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+
+(81) InMemoryRelation
+Arguments: [location_id#2186, file_year#2187, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, utc_offset_seconds#2182, temperature_2m#2214, relative_humidity_2m#2215, dew_point_2m#2216, apparent_temperature#2217, precipitation#2218, rain#2219, weather_code#2220, cloud_cover#2221, wind_speed_10m#2222, wind_gusts_10m#2223, ts#2213], StorageLevel(disk, memory, deserialized, 1 replicas)
+
+(82) Sort
+Input [6]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+Arguments: [location_id#2186 ASC NULLS FIRST, ts#2213 ASC NULLS FIRST, source_file#2185 DESC NULLS LAST], false, 0
+
+(83) WindowGroupLimit
+Input [6]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+Arguments: [location_id#2186, ts#2213], [source_file#2185 DESC NULLS LAST], row_number(), 1, Partial
+
+(84) Exchange
+Input [6]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+Arguments: hashpartitioning(location_id#2186, ts#2213, 32), ENSURE_REQUIREMENTS, [plan_id=4319]
+
+(85) Sort
+Input [6]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+Arguments: [location_id#2186 ASC NULLS FIRST, ts#2213 ASC NULLS FIRST, source_file#2185 DESC NULLS LAST], false, 0
+
+(86) WindowGroupLimit
+Input [6]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+Arguments: [location_id#2186, ts#2213], [source_file#2185 DESC NULLS LAST], row_number(), 1, Final
+
+(87) Window
+Input [6]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213]
+Arguments: [row_number() windowspecdefinition(location_id#2186, ts#2213, source_file#2185 DESC NULLS LAST, specifiedwindowframe(RowFrame, unboundedpreceding$(), currentrow$())) AS _rn#2224], [location_id#2186, ts#2213], [source_file#2185 DESC NULLS LAST]
+
+(88) Filter
+Input [7]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213, _rn#2224]
+Condition : (_rn#2224 = 1)
+
+(89) Project
+Output [4]: [location_id#2186, grid_latitude#2188, grid_longitude#2189, elevation#2181]
+Input [7]: [location_id#2186, source_file#2185, grid_latitude#2188, grid_longitude#2189, elevation#2181, ts#2213, _rn#2224]
+
+(90) HashAggregate
+Input [4]: [location_id#2186, grid_latitude#2188, grid_longitude#2189, elevation#2181]
+Keys [1]: [location_id#2186]
+Functions [3]: [partial_first(grid_latitude#2188, false), partial_first(grid_longitude#2189, false), partial_first(elevation#2181, false)]
+Aggregate Attributes [6]: [first#5048, valueSet#5049, first#5050, valueSet#5051, first#5052, valueSet#5053]
+Results [7]: [location_id#2186, first#5054, valueSet#5055, first#5056, valueSet#5057, first#5058, valueSet#5059]
+
+(91) Exchange
+Input [7]: [location_id#2186, first#5054, valueSet#5055, first#5056, valueSet#5057, first#5058, valueSet#5059]
+Arguments: hashpartitioning(location_id#2186, 32), ENSURE_REQUIREMENTS, [plan_id=4327]
+
+(92) HashAggregate
+Input [7]: [location_id#2186, first#5054, valueSet#5055, first#5056, valueSet#5057, first#5058, valueSet#5059]
+Keys [1]: [location_id#2186]
+Functions [3]: [first(grid_latitude#2188, false), first(grid_longitude#2189, false), first(elevation#2181, false)]
+Aggregate Attributes [3]: [first(grid_latitude#2188)()#1121, first(grid_longitude#2189)()#1122, first(elevation#2181)()#1123]
+Results [4]: [location_id#2186, first(grid_latitude#2188)()#1121 AS grid_latitude#1100, first(grid_longitude#2189)()#1122 AS grid_longitude#1101, first(elevation#2181)()#1123 AS elevation_m#1102]
+
+(93) BroadcastExchange
+Input [4]: [location_id#2186, grid_latitude#1100, grid_longitude#1101, elevation_m#1102]
+Arguments: HashedRelationBroadcastMode(List(input[0, string, false]),false), [plan_id=4330]
+
+(94) BroadcastHashJoin
+Left keys [1]: [location_id#8]
+Right keys [1]: [location_id#2186]
+Join type: LeftOuter
+Join condition: None
+
+(95) Project
+Output [28]: [location_id#8, location_name#2173, site_name#2174, region#2177, is_core#2178, latitude#2175, longitude#2176, grid_latitude#1100, grid_longitude#1101, elevation_m#1102, ts#1576, date#2167, precip_date#2168, year#2169, month#2170, hour#2171, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2164, precipitation#2106, rain#2108, weather_code#2166, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, temp_imputed#2165]
+Input [29]: [location_id#8, ts#1576, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2164, precipitation#2106, rain#2108, weather_code#2166, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, temp_imputed#2165, date#2167, precip_date#2168, year#2169, month#2170, hour#2171, location_name#2173, site_name#2174, latitude#2175, longitude#2176, region#2177, is_core#2178, location_id#2186, grid_latitude#1100, grid_longitude#1101, elevation_m#1102]
+
+(96) AdaptiveSparkPlan
+Output [28]: [location_id#8, location_name#2173, site_name#2174, region#2177, is_core#2178, latitude#2175, longitude#2176, grid_latitude#1100, grid_longitude#1101, elevation_m#1102, ts#1576, date#2167, precip_date#2168, year#2169, month#2170, hour#2171, temperature_2m#2128, relative_humidity_2m#2140, dew_point_2m#2152, apparent_temperature#2164, precipitation#2106, rain#2108, weather_code#2166, cloud_cover#2110, wind_speed_10m#2112, wind_gusts_10m#2114, is_missing_row#1624, temp_imputed#2165]
+Arguments: isFinalPlan=false
+
+

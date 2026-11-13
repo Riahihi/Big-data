@@ -168,7 +168,10 @@ def main():
     for k, v in report.items():
         if isinstance(v, dict):
             print(k, "->", "PASS" if v.get("passed") else ("SKIP" if "skipped" in v else "FAIL"))
-    print("ALL PASSED" if report["all_passed"] else "CÓ KIỂM TRA THẤT BẠI – xem verification_report.json")
+    if not report["all_passed"]:
+        print("CÓ KIỂM TRA THẤT BẠI – xem verification_report.json")
+        raise SystemExit(1)
+    print("ALL PASSED")
 
 
 if __name__ == "__main__":

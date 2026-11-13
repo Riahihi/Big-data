@@ -20,6 +20,19 @@ Cần Python 3.12 và Java 17.
 
 ```bash
 cd weather_bigdata
+```
+
+Windows PowerShell:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+Linux/macOS:
+
+```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -29,6 +42,10 @@ pip install -r requirements.txt
 
 Repo đã có sẵn dữ liệu gốc (`data/raw`) và các bảng kết quả (`data/results`), nhưng không có dữ liệu sạch
 (`data/clean`, khoảng 50 MB). Trước khi mở web cần chạy `python run_pipeline.py --skip-ingest` một lần (khoảng 5 phút).
+
+Trên Windows, `pipeline/spark_utils.py` tự tải adapter Java NIO đã ghim SHA-256 để Spark đọc/ghi
+file cục bộ mà không cần `winutils.exe`; lần chạy đầu cần truy cập Maven Central. Kích hoạt môi
+trường ảo bằng `.venv\Scripts\Activate.ps1` trong PowerShell.
 
 ```bash
 python run_pipeline.py                 # chạy hết
@@ -47,6 +64,8 @@ python pipeline/advanced.py        # phần mở rộng
 python pipeline/verify.py          # kiểm tra kết quả
 python pipeline/benchmark.py       # đo hiệu năng
 python pipeline/figures.py         # vẽ biểu đồ
+python pipeline/checkpoint_report.py # tạo báo cáo sau khi chạy đủ pipeline
+python reports/build_checkpoint3_pdf.py # xuất reports/checkpoint3.pdf
 python -m pytest tests -q          # test
 python web/app.py                  # web, mở http://127.0.0.1:7890
 ```
@@ -73,7 +92,15 @@ data/raw/          file json gốc
 data/clean/        dữ liệu sạch (parquet)
 data/results/      các bảng kết quả (parquet + csv)
 reports/figures/   biểu đồ png
+reports/evidence/  Spark formatted plan
+reports/checkpoint3.md  báo cáo/evidence Checkpoint 3
+reports/checkpoint3.pdf  bản PDF theo mẫu Checkpoint 3
 ```
+
+`pipeline/clean.py` lưu execution plan ở `reports/evidence/clean_plan.txt` và dừng nếu join
+grid/dimension làm mất hoặc nhân bản dữ liệu. Báo cáo Checkpoint 3 được tạo ở bước cuối của
+`run_pipeline.py`; bước report từ chối tạo báo cáo nếu clean, analysis, advanced, verify,
+benchmark hoặc figures chưa thành công.
 
 ## Dữ liệu
 
@@ -117,7 +144,7 @@ và phân nhóm khí hậu các tỉnh bằng KMeans.
 - So với dữ liệu ngày của Open-Meteo (18.260 ngày, 10 điểm): mưa khớp 100%, nhiệt độ TB khớp 100%.
 - Cộng tay 24 giờ của ngày 12/09/2021 ở Đà Nẵng: 200,1 mm, giống kết quả Spark.
 - Đọc lại parquet đủ 2.980.848 dòng.
-- 7 test trong `tests/` đều chạy qua.
+- 14 test trong `tests/` đều chạy qua.
 
 ## Một số kết quả
 

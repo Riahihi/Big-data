@@ -11,6 +11,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
@@ -50,6 +51,19 @@ def write_raw(dirpath: Path, loc="HNI", year=2020, edit=None):
     with gzip.open(p, "wt") as f:
         json.dump(payload, f)
     return p
+
+
+def create_test_frame(spark, rows, schema):
+    columns = [field.strip().split()[0] for field in schema.split(",")]
+    pdf = pd.DataFrame(rows, columns=columns)
+    return spark.createDataFrame(pdf, schema)
+
+
+def test_spark_parquet_roundtrip(spark, tmp_path):
+    output = tmp_path / "parquet"
+    spark.sql("SELECT 1 AS id, 'ok' AS value").write.mode("overwrite").parquet(str(output))
+    rows = spark.read.parquet(str(output)).collect()
+    assert [(row["id"], row["value"]) for row in rows] == [(1, "ok")]
 
 
 def test_clean_detects_missing_duplicate_out_of_range_and_imputes(spark, tmp_path):
@@ -93,8 +107,9 @@ def test_rules_on_single_file(spark, tmp_path):
     assert q["null_after_clean_temperature_2m"] == 6  # R5: khoảng 6 giờ không nội suy
     assert q["null_after_clean_precipitation"] == 3  # 2 giờ thiếu + 1 giá trị âm
 
+    start_ts = F.to_timestamp(F.lit("2020-01-01 00:00:00"))
     rows = {r["hour_idx"]: r for r in clean.select(
-        ((F.col("ts").cast("long") - F.lit(int(datetime(2020, 1, 1).timestamp()) - 7 * 3600)) / 3600)
+        ((F.col("ts").cast("long") - start_ts.cast("long")) / 3600)
         .cast("int").alias("hour_idx"), "temperature_2m", "temp_imputed", "is_missing_row").collect()}
     # Giờ thiếu index 10, 11 được nội suy tuyến tính giữa giờ 9 và giờ 12
     t9, t12 = rows[9]["temperature_2m"], rows[12]["temperature_2m"]
@@ -109,8 +124,8 @@ def test_rules_on_single_file(spark, tmp_path):
 def test_interpolation_respects_max_gap(spark):
     base = datetime(2020, 1, 1)
     vals = [1.0, None, None, None, 5.0, None, None, None, None, 10.0]  # gap 3 -> nội suy; gap 4 -> không
-    df = spark.createDataFrame([("HNI", base + timedelta(hours=i), v) for i, v in enumerate(vals)],
-                               "location_id string, ts timestamp, temperature_2m double")
+    df = create_test_frame(spark, [("HNI", base + timedelta(hours=i), v) for i, v in enumerate(vals)],
+                           "location_id string, ts timestamp, temperature_2m double")
     out = interpolate_short_gaps(df, cols=["temperature_2m"], max_gap=3).orderBy("ts").collect()
     got = [r["temperature_2m"] for r in out]
     assert got[:5] == [1.0, 2.0, 3.0, 4.0, 5.0]
@@ -118,9 +133,11 @@ def test_interpolation_respects_max_gap(spark):
 
 
 def _daily(spark, rows):
-    return spark.createDataFrame(rows, "location_id string, location_name string, site_name string, region string, "
-                                       "is_core boolean, date date, year int, month int, precip_mm double, t_max double, "
-                                       "t_mean double, precip_max_1h double, wet_hours int, is_complete boolean")
+    return create_test_frame(
+        spark, rows, "location_id string, location_name string, site_name string, region string, "
+        "is_core boolean, date date, year int, month int, precip_mm double, t_max double, "
+        "t_mean double, precip_max_1h double, wet_hours int, is_complete boolean"
+    )
 
 
 def test_q3_keeps_ties_at_fifth_place(spark):
@@ -147,7 +164,8 @@ def test_ols_matches_numpy(spark):
     rng = np.random.default_rng(0)
     x = np.arange(120) / 12 + 2016
     y = 0.03 * x + rng.normal(0, 0.3, x.size)
-    df = spark.createDataFrame([("A", float(a), float(b)) for a, b in zip(x, y)], "g string, x double, y double")
+    df = create_test_frame(spark, [("A", float(a), float(b)) for a, b in zip(x, y)],
+                           "g string, x double, y double")
     r = ols(df, "x", "y", ["g"]).collect()[0]
     slope, intercept = np.polyfit(x, y, 1)
     resid = y - (slope * x + intercept)
@@ -167,10 +185,12 @@ def test_daily_sum_and_completeness(spark):
             p = 7.0  # giá trị 00:00 ngày 2/1 là mưa của ngày 1/1
         rows.append(("HNI", "Hà Nội", "Hà Nội", "R", True, ts.date(), (ts - timedelta(hours=1)).date(),
                      20.0 + h % 24, p, 80.0, 25.0, 10.0))
-    df = spark.createDataFrame(rows, "location_id string, location_name string, site_name string, region string, "
-                                     "is_core boolean, date date, precip_date date, temperature_2m double, "
-                                     "precipitation double, relative_humidity_2m double, apparent_temperature double, "
-                                     "wind_gusts_10m double")
+    df = create_test_frame(
+        spark, rows, "location_id string, location_name string, site_name string, region string, "
+        "is_core boolean, date date, precip_date date, temperature_2m double, "
+        "precipitation double, relative_humidity_2m double, apparent_temperature double, "
+        "wind_gusts_10m double"
+    )
     d = {r["date"]: r for r in build_daily(df).collect()}
     assert date(2019, 12, 31) not in d  # "ngày mưa" chỉ có 1 giá trị lúc 00:00 bị loại
     assert d[date(2020, 1, 1)]["precip_mm"] == pytest.approx(23 * 0.5 + 7.0)

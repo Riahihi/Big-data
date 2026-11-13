@@ -10,9 +10,12 @@ Các quy tắc nhóm thống nhất:
 
 Chạy: python pipeline/clean.py
 """
+import calendar
+import glob
 import json
 import sys
 import time
+from contextlib import redirect_stdout
 from pathlib import Path
 
 if __package__ in (None, ""):
@@ -61,9 +64,16 @@ def raw_schema():
 
 def read_raw(spark, raw_glob=None) -> DataFrame:
     """Đọc file json gốc. Mỗi file là các mảng theo giờ nên phải explode ra từng dòng"""
-    raw_glob = raw_glob or str(C.RAW_DIR / "*" / "*.json.gz")
+    if raw_glob is None:
+        raw_paths = [str(path) for path in sorted(C.RAW_DIR.glob("*/*.json.gz"))]
+    elif isinstance(raw_glob, (str, Path)):
+        raw_paths = sorted(glob.glob(str(raw_glob))) if glob.has_magic(str(raw_glob)) else [str(raw_glob)]
+    else:
+        raw_paths = [str(path) for path in raw_glob]
+    if not raw_paths:
+        raise FileNotFoundError(f"Không tìm thấy file JSON gốc phù hợp với {raw_glob or C.RAW_DIR}")
     df = (
-        spark.read.schema(raw_schema()).option("multiLine", True).json(raw_glob)
+        spark.read.schema(raw_schema()).option("multiLine", True).json(raw_paths)
         .withColumn("source_file", F.input_file_name())
     )
     # lấy mã địa điểm, năm từ tên file (vd HNI_2019.json.gz)
@@ -100,10 +110,9 @@ def deduplicate(df: DataFrame):
     return ranked.filter("_rn = 1").drop("_rn"), n_dup
 
 
-def hourly_grid(spark, loc_years) -> DataFrame:
+def hourly_grid(loc_years: DataFrame) -> DataFrame:
     """R3: tạo đủ các giờ của từng năm để biết giờ nào thiếu"""
-    base = spark.createDataFrame(loc_years, "location_id string, year int")
-    return base.select(
+    return loc_years.select(
         "location_id",
         F.explode(F.sequence(
             F.to_timestamp(F.format_string("%d-01-01 00:00", "year"), "yyyy-MM-dd HH:mm"),
@@ -145,11 +154,48 @@ def interpolate_short_gaps(df: DataFrame, cols=INTERPOLATE_VARS, max_gap=MAX_GAP
 
 
 def location_dim(spark) -> DataFrame:
-    return spark.createDataFrame(
-        C.LOCATIONS,
-        "location_id string, location_name string, site_name string, latitude double, "
-        "longitude double, region string, is_core boolean",
+    def sql_literal(value):
+        if isinstance(value, str):
+            return "'" + value.replace("'", "''") + "'"
+        if isinstance(value, bool):
+            return "TRUE" if value else "FALSE"
+        return str(value)
+
+    values = ", ".join(
+        "(" + ", ".join(sql_literal(value) for value in row) + ")"
+        for row in C.LOCATIONS
     )
+    columns = ", ".join(C.LOCATION_FIELDS)
+    return spark.sql(f"SELECT * FROM VALUES {values} AS locations({columns})")
+
+
+def validate_location_keys(raw_ids, dimension_rows=None):
+    """Fail before the dimension join can drop or multiply fact rows."""
+    rows = C.LOCATIONS if dimension_rows is None else dimension_rows
+    dimension_ids = [row[0] for row in rows]
+    duplicates = sorted({location_id for location_id in dimension_ids
+                         if dimension_ids.count(location_id) > 1})
+    if duplicates:
+        raise ValueError(f"location dimension has duplicate keys: {duplicates}")
+
+    if None in raw_ids:
+        raise ValueError("raw input contains a null location_id")
+    unmatched = sorted(set(raw_ids) - set(dimension_ids))
+    if unmatched:
+        raise ValueError(f"raw locations missing from location dimension: {unmatched}")
+    return len(dimension_ids)
+
+
+def validate_join_quality(stats):
+    failures = []
+    if stats["rows_outside_grid"]:
+        failures.append(f"{stats['rows_outside_grid']} rows fall outside the hourly grid")
+    if stats["rows_unmatched_location_dimension"]:
+        failures.append(f"{stats['rows_unmatched_location_dimension']} rows lack a location dimension match")
+    if stats["grid_join_row_delta"]:
+        failures.append(f"grid join changed row count by {stats['grid_join_row_delta']}")
+    if failures:
+        raise ValueError("join quality gate failed: " + "; ".join(failures))
 
 
 def build_clean(spark, raw_glob=None):
@@ -166,15 +212,38 @@ def build_clean(spark, raw_glob=None):
         F.first("grid_longitude").alias("grid_longitude"),
         F.first("elevation").alias("elevation_m"),
     )
-    loc_years = [tuple(r) for r in dedup.select("location_id", "file_year").distinct().collect()]
-    grid = hourly_grid(spark, loc_years)
+    loc_years = dedup.select("location_id", F.col("file_year").alias("year")).distinct()
+    loc_year_rows = loc_years.collect()
+    if not loc_year_rows:
+        raise ValueError("No location/year records were found in the raw input")
+    if any(row["year"] is None for row in loc_year_rows):
+        raise ValueError("raw input contains an invalid year in its source filename")
+    raw_ids = {row["location_id"] for row in loc_year_rows}
+    stats["location_dimension_keys"] = validate_location_keys(raw_ids)
+    stats["rows_after_deduplicate"] = stats["raw_rows"] - stats["duplicates_removed"]
+    stats["rows_before_grid_join"] = stats["rows_after_deduplicate"]
+    stats["expected_grid_rows"] = sum(
+        (366 if calendar.isleap(row["year"]) else 365) * 24 for row in loc_year_rows
+    )
+    stats["rows_unmatched_location_dimension"] = 0
+    grid = hourly_grid(loc_years)
 
     # left join từ lưới giờ, giờ nào không có dữ liệu thì is_missing_row = true
     joined = grid.join(dedup.drop("file_year", "grid_latitude", "grid_longitude", "elevation"),
                        ["location_id", "ts"], "left") \
                  .withColumn("is_missing_row", F.col("source_file").isNull())
     # đếm số dòng nằm ngoài lưới (nếu có)
-    stats["rows_outside_grid"] = dedup.join(grid, ["location_id", "ts"], "left_anti").count()
+    outside_grid = (
+        F.col("ts").isNull()
+        | F.col("file_year").isNull()
+        | (F.year("ts") != F.col("file_year"))
+        | (F.minute("ts") != 0)
+        | (F.second("ts") != 0)
+    )
+    stats["rows_outside_grid"] = dedup.filter(outside_grid).count()
+    if stats["rows_outside_grid"]:
+        raise ValueError(f"{stats['rows_outside_grid']} raw rows fall outside the hourly grid")
+    stats["rows_matched_to_grid"] = stats["rows_after_deduplicate"] - stats["rows_outside_grid"]
 
     checked = apply_valid_ranges(joined)
     filled = interpolate_short_gaps(checked)
@@ -214,15 +283,26 @@ def main():
     spark = get_spark("clean")
     clean, quality, keep, stats, raw = build_clean(spark)
 
+    q = quality.toPandas()
+    stats["rows_after_dimension_join"] = int(q["expected_hours"].sum())
+    stats["grid_join_row_delta"] = stats["rows_after_dimension_join"] - stats["expected_grid_rows"]
+    validate_join_quality(stats)
+
+    C.REPORTS.joinpath("evidence").mkdir(parents=True, exist_ok=True)
+    stats["input_schema"] = raw.schema.jsonValue()
+    stats["output_schema"] = clean.select(*keep).schema.jsonValue()
+    with C.REPORTS.joinpath("evidence", "clean_plan.txt").open("w", encoding="utf-8") as plan:
+        with redirect_stdout(plan):
+            clean.select(*keep).explain("formatted")
+
     out = C.CLEAN_DIR / "hourly"
     # ghi parquet, chia partition theo địa điểm và năm
     (clean.select(*keep).repartition("location_id", "year")
           .write.mode("overwrite").partitionBy("location_id", "year").parquet(str(out)))
 
-    q = quality.toPandas()
     C.RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    spark.createDataFrame(q).write.mode("overwrite").parquet(str(C.RESULTS_DIR / "quality_report"))
-    q.to_csv(C.RESULTS_DIR / "quality_report.csv", index=False)
+    quality.write.mode("overwrite").parquet(str(C.RESULTS_DIR / "quality_report"))
+    q.to_csv(C.RESULTS_DIR / "quality_report.csv", index=False, encoding="utf-8-sig")
 
     # đọc lại để kiểm tra số dòng
     back = spark.read.parquet(str(out))
@@ -236,7 +316,13 @@ def main():
     stats["n_locations"] = back.select("location_id").distinct().count()
     stats["parquet_roundtrip_ok"] = stats["clean_rows"] == stats["expected_rows"]
     stats["elapsed_s"] = round(time.time() - t0, 1)
-    (C.RESULTS_DIR / "clean_stats.json").write_text(json.dumps(stats, indent=2, ensure_ascii=False))
+    if not stats["parquet_roundtrip_ok"]:
+        raise ValueError(
+            f"Parquet row count mismatch: wrote {stats['clean_rows']}, expected {stats['expected_rows']}"
+        )
+    (C.RESULTS_DIR / "clean_stats.json").write_text(
+        json.dumps(stats, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
     print(json.dumps(stats, indent=2, ensure_ascii=False))
     raw.unpersist()
     spark.stop()
