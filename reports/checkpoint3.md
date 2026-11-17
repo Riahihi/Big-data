@@ -1,6 +1,6 @@
 # Checkpoint 3 — Spark Processing Pipeline
 
-_Tạo lúc 2026-11-13T23:48:06+07:00_
+_Tạo lúc 2026-11-14T07:50:03+07:00_
 
 ## Kiến trúc
 
@@ -112,15 +112,15 @@ Bảng chính được ghi ở `data/results/` dưới dạng Parquet và CSV; c
 | --- | --- | ---: | --- |
 | `ingest` | ok | 0.9 | 2026-11-13T23:19:43 |
 | `daily` | ok | 0.3 | 2026-11-13T23:19:43 |
-| `clean` | ok | 121.6 | 2026-11-13T23:42:17 |
-| `analysis` | ok | 36.2 | 2026-11-13T23:42:53 |
-| `advanced` | ok | 116.0 | 2026-11-13T23:44:49 |
-| `verify` | ok | 2.9 | 2026-11-13T23:44:52 |
-| `benchmark` | ok | 180.5 | 2026-11-13T23:47:52 |
-| `figures` | ok | 13.4 | 2026-11-13T23:48:06 |
+| `clean` | ok | 185.6 | 2026-11-14T07:44:04 |
+| `analysis` | ok | 56.4 | 2026-11-14T07:45:01 |
+| `advanced` | ok | 96.4 | 2026-11-14T07:46:37 |
+| `verify` | ok | 9.2 | 2026-11-14T07:46:46 |
+| `benchmark` | ok | 189.0 | 2026-11-14T07:49:55 |
+| `figures` | ok | 7.6 | 2026-11-14T07:50:03 |
 
 - CSV size: 614.6 MB; flat Parquet size: 37.0 MB.
-- Q1 timing: CSV 5.158 s; Parquet 0.942 s.
+- Q1 timing: CSV 6.5 s; Parquet 0.6 s.
 - Rerun dùng `overwrite`; pipeline log được lưu tại `data/results/pipeline_run.json`.
 - Mỗi lần đo và máy có thể khác nhau; dùng cùng input/máy để so sánh baseline.
 
